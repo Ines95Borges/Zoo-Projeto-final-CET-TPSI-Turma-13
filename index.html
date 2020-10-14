@@ -105,18 +105,19 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form class="row g-3 needs-validation" novalidate>
+        <form class="row g-3 needs-validation" novalidate action="php/userRegister.php" method="POST">
+          <div class="modal-body">
+          
             <div class="col-md-6">
               <label for="validationCustom01" class="form-label">Primeiro Nome</label>
-              <input type="text" class="form-control" id="validationCustom01" value="Ex.: Maria" required>
+              <input type="text" class="form-control" name="firstName" id="validationCustom01" value="Ex.: Maria" required>
               <div class="valid-feedback">
                 Parece bem!
               </div>
             </div>
             <div class="col-md-6">
-              <label for="validationCustom02" class="form-label">Segundo Nome</label>
-              <input type="text" class="form-control" id="validationCustom02" value="Ex.: Gomes" required>
+              <label for="validationCustom02" class="form-label">Apelido</label>
+              <input type="text" class="form-control" name="lastName" id="validationCustom02" value="Ex.: Gomes" required>
               <div class="valid-feedback">
                 Parece bem!
               </div>
@@ -125,22 +126,29 @@
               <label for="validationCustomUsername" class="form-label">Nome de utilizador</label>
               <div class="input-group">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" name="username" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Por favor escolha um nome de utilizador.
                 </div>
               </div>
             </div>
             <div class="col-md-6">
+              <label for="validationCustom06" class="form-label">Password</label>
+              <input type="password" class="form-control" name="pwd" id="validationCustom06" required>
+              <div class="invalid-feedback">
+                Pro favor introduza uma password válida.
+              </div>
+            </div>
+            <div class="col-md-6">
               <label for="validationCustom03" class="form-label">Cidade</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
+              <input type="text" class="form-control" name="city" id="validationCustom03" required>
               <div class="invalid-feedback">
                 Pro favor introduza uma cidade válida.
               </div>
             </div>
             <div class="col-md-6">
               <label for="validationCustom04" class="form-label">Distrito</label>
-              <select class="form-select" id="validationCustom04" required>
+              <select class="form-select" name="district" id="validationCustom04" required>
                 <option selected disabled value="">Escolha...</option>
                 <option>...</option>
               </select>
@@ -150,7 +158,7 @@
             </div>
             <div class="col-md-6">
               <label for="validationCustom05" class="form-label">Código-postal</label>
-              <input type="text" class="form-control" id="validationCustom05" required>
+              <input type="text" class="form-control" name="zipCode" id="validationCustom05" required>
               <div class="invalid-feedback">
                 Por favor introduza um código-postal válido.
               </div>
@@ -166,12 +174,13 @@
                 </div>
               </div>
             </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <button type="submit" class="btn btn-primary">Cadastrar-se</button>
-        </div>
+          
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="submit" name="register" class="btn btn-primary">Cadastrar-se</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
