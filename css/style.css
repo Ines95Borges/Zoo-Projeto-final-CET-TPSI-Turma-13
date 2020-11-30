@@ -186,4 +186,58 @@
 }
 
 /* --------------- End of Cart ---------------- */
+/*----------------Start of Add More -----------------*/
+.addMoreContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.addMoreContainer hr {
+  width: 100%;
+  border-width: 3;
+  background-color: #05ff05;
+  color: #05ff05;
+}
+
+.addMoreContainer .addMoreCenterItems {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addMoreContainer .addMoreCenterItems .addMoreButton {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ffbb00;
+  background-color: #ecec9f;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+/*----------------End of Add More -----------------*/
 /*# sourceMappingURL=style.css.map */

@@ -19,7 +19,7 @@
   
   <main>
 
-    <div class="container mt-5">
+    <div class="container mt-5 mb-5">
       <div class="row-col d-flex mt-3 align-items-center">
         <img src="img/events/event-1.jpg" alt="Evento 1">
         <div class="ml-5">
@@ -53,6 +53,8 @@
     <?php require './shoppingCartSidebar.php'; ?>
 
   </main>
+
+  <?php require_once './footer.html'; ?>
 
 </body>
 </html>

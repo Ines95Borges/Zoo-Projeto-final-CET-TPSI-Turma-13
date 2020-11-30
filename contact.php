@@ -108,5 +108,7 @@
 
   </main>
 
+  <?php require_once './footer.html'; ?>
+  
 </body>
 </html>

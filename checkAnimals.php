@@ -45,7 +45,7 @@
         </li>
       </ul>
 
-      <div class="container d-md-flex justify-content-around">
+      <div class="container d-md-flex flex-wrap justify-content-around">
 
         <?php
 
@@ -53,22 +53,37 @@
 
         $sql = "SELECT * FROM v_show_animals";
         $query = mysqli_query($conn, $sql);
+        $num_rows = mysqli_num_rows($query);
+        $countAnimalsDisplayed = 0;
 
-        while($fetch = mysqli_fetch_assoc($query)){ ?>
-          <div class="card" style="width: 18rem;">
+        while($fetch = mysqli_fetch_assoc($query)){ 
+          $countAnimalsDisplayed++;?>
+          <div class="card" style="width: 18rem; margin-bottom:20px;">
             <img class="card-img-top" src="<?php echo $fetch['FotoLink']; ?>" alt="<?php echo $fetch['Name']; ?>">
-            <div class="card-body">
+            <div class="card-body" style="display: flex; align-items: flex-end; justify-content: space-between;">
               <h5 class="card-title"><?php echo $fetch['Name']; ?></h5>
               <a class="btn btn-primary itemBtn">Detalhes</a>
             </div>
           </div>
-        <?php } ?>
+        <?php if($countAnimalsDisplayed % 6 == 0){ ?>
+          <div class="addMoreContainer">
+            <hr>
+            <div class="addMoreCenterItems">
+              <div class="addMoreButton">
+                +
+              </div>
+              <h6>Show more 6</h6>
+            </div>
+          </div>
+        <?php break; } } ?>
 
       </div>
     </div>
 
-    <?php require 'shoppingCartSidebar.php'; ?>
+    <?php require './shoppingCartSidebar.php'; ?>
   </main>
+
+	<?php require_once './footer.html'; ?>
 
 </body>
 </html>

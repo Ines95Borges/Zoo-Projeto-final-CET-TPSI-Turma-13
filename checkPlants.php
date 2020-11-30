@@ -39,7 +39,7 @@
         </li>
       </ul>
 
-      <div class="container d-md-flex justify-content-around">
+      <div class="container d-md-flex flex-wrap justify-content-around">
 
         <?php
 
@@ -49,9 +49,9 @@
         $query = mysqli_query($conn, $sql);
 
         while($fetch = mysqli_fetch_assoc($query)){ ?>
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 18rem; margin-bottom:20px;">
             <img class="card-img-top" src="<?php echo $fetch['FotoLink']; ?>" alt="<?php echo $fetch['PlantName']; ?>">
-            <div class="card-body">
+            <div class="card-body" style="display: flex; align-items: flex-end; justify-content: space-between;">
               <h5 class="card-title"><?php echo $fetch['PlantName']; ?></h5>
               <a class="btn btn-primary itemBtn">Detalhes</a>
             </div>
@@ -63,6 +63,8 @@
 
     <?php require 'shoppingCartSidebar.php'; ?>
   </main>
+
+  <?php require_once './footer.html'; ?>
 
 </body>
 </html>

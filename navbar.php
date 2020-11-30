@@ -7,13 +7,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item mr-4">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mr-4">
           <a class="nav-link" href="store.php">Loja</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown mr-4">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
             No Zoo
           </a>
@@ -26,13 +26,13 @@
             <li><a class="dropdown-item" href="#">Instituições</a></li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mr-4">
           <a class="nav-link" href="aboutus.php">Sobre nós</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mr-4">
           <a class="nav-link" href="contact.php">Contacte-nos</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mr-4">
           <a class="nav-link" href="events.php">Eventos</a>
         </li>
       </ul>
