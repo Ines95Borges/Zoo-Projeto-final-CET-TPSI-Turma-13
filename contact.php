@@ -1,63 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/popper.min.js"></script>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css" defer>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/popper.min.js"></script>
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/passwords.js"></script>
+  <script src="./js/cartScript.js" defer></script>
+  <style>
+    #map{
+      height: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   
-  <!--NAVBAR-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">FBAWTFT</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Loja</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-              No Zoo
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Ver animais</a></li>
-              <li><a class="dropdown-item" href="#">Ver plantas</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Comprar tickets</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sobre nós</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contacte-nos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Eventos</a>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#logIn">Entrar</button>
-          <button class="btn btn-outline-success" type="button" data-toggle="modal" data-target="#signUp">Registar-se</button>
-        </form>
-      </div>
-    </div>
-  </nav>
+  <?php require './navbar.php'; ?>
   
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Contacte-nos</li>
     </ol>
   </nav>
@@ -106,6 +74,37 @@
         </aside>
       </div>
     </div>
+
+    <?php require './shoppingCartSidebar.php'; ?>
+
+    <div id="map"></div>
+
+    <script>
+      function initMap(){
+        var options = {
+          zoom:15,
+          center:{lat:38.720537, lng:-9.145902}
+        }
+        
+        // New map
+        var map = new google.maps.Map(document.getElementById('map'), options);
+
+        // Add marker
+        var marker = new google.maps.Marker({
+          position:{lat:38.720537, lng:-9.158900},
+          map: map,
+          icon: {
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 10
+          }
+        })
+      }
+    </script>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGOyb_87IOla4Qz3-PDj18qDfyYPoo3s&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
 
   </main>
 

@@ -1,3 +1,158 @@
-ul{
-  list-style-type: none;
+// Variables
+$mainTransition: all 3s;
+$mainSpacing: 0.1rem;
+$primaryColor:  #f09d51;
+$mainWhite: #fff;
+$mainBlack: #222;
+$mainGrey: #ececec;
+
+// Styling the dropdown image when the user is logged in
+#loggedInDropdown{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 130px;
+  #loginIcon{
+    width: 30px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 50%;
+  }
 }
+
+// Styling the space between divs and margins in the footer
+.footer-links{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  .col-md-4{
+    border-left: 3px dotted blue;
+  }
+}
+
+.footer-rights{
+  background-color: black;
+  small{
+    color: blanchedalmond;
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+}
+
+// Styling the ticket cards
+.ticket-card:hover{
+  background-color: #666;
+}
+
+// Start of shopping cart button
+.cart-items{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+  width: 15px;
+  height: 15px;
+  background-color: coral;
+  color: aliceblue;
+  border-radius: 30%;
+  border: 1px solid white;
+}
+// ---------------End of shopping cart button-----------------
+/* --------------- Cart ---------------- */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  transition: width 2s;
+  background: rgba(172, 171, 170, 0.5);
+  z-index: 1;
+  visibility: hidden;
+}
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 2;
+  background: rgb(231, 226, 221);
+  padding: 1.5rem;
+  transition: width 2s;
+  transform: translateX(100%);
+}
+.showCart {
+  transform: translateX(0);
+}
+.transparentBcg {
+  visibility: visible;
+}
+@media screen and (min-width: 769px) {
+  .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.cart h2 {
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: $mainSpacing;
+  margin-bottom: 2rem;
+}
+/*---------- Cart Item -------------------- */
+.cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.cart-item img {
+  width: 75px;
+  height: 75px;
+}
+.cart-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: $mainSpacing;
+}
+.cart-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: $mainSpacing;
+}
+.div-amount{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  .item-amount {
+    text-align: center;
+  }
+}
+
+.remove-item {
+  color: grey;
+  cursor: pointer;
+}
+/*---------- End of Cart Item -------------------- */
+
+.cart-footer {
+  margin-top: 2rem;
+  letter-spacing: $mainSpacing;
+  text-align: center;
+}
+.cart-footer h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+/* --------------- End of Cart ---------------- */

@@ -7,8 +7,6 @@ $dbName = "fbawtft_zoo";
 
 $conn = mysqli_connect($host, $user, $pwd, $dbName);
 
-if(!conn){
-
+if(!$conn){
   die("Connection failed: ").mysqli_connect_error();
-
 }
