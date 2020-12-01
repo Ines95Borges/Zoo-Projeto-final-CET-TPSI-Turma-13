@@ -1,0 +1,48 @@
+body{
+  background-image: url(../img/backoffice/backoffice-background.jpg);
+}
+
+header{
+  display: flex;
+  height: 40vh;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  margin-bottom: 50px;
+  h1{
+    color: red;
+    text-shadow: 0 2px white, 0 3px rgb(255, 0, 0);
+    letter-spacing: 2px;
+    font-size: 5vw;
+  }
+}
+
+.changeButton{
+  width: 30vw;
+  height: 10vw;
+  font-size: 2vw;
+  border-radius: 15px;
+  box-shadow: 10px 10px 10px 10px gray;
+  background-color: rgb(47, 121, 47);
+  transition: all 0.5s;
+  margin-bottom: 3vw;
+}
+.changeButton:hover{
+  background-color: rgba(134, 25, 25, 0.808);
+  border-radius: 30px;
+}
+
+@media (max-width: 640px){
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+  }
+  .changeButton{
+    width: 100%;
+    margin-bottom: 10vh;
+    font-size: 4vw;
+    box-shadow: 5px 5px 5px 5px gray;
+  }
+}
