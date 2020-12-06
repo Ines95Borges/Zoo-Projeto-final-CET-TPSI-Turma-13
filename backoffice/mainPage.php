@@ -50,13 +50,94 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="" method="post">
+          <form action="./php/addAnimal.php" method="post">
             <div class="modal-body">
+              <!-- Fetch data from database to select the one that is to eliminate -->
+              <!-- Enclosure -->
+              <label class="mr-5">Escolha um recinto para adicionar</label>
+              <select name="addEnclosureSelection">
+                <option value="" disabled selected>Escolha...</option>
+              <?php 
+              
+              require '../php/includes/connection.php';
 
+              $sql = "SELECT Name From enclosures;";
+              $query = mysqli_query($conn, $sql);
+
+              while($fetch=mysqli_fetch_assoc($query)){ ?>
+                <option value=<?php echo $fetch['Name']; ?>><?php echo $fetch['Name']; ?></option>
+              <?php } ?>
+
+              </select>
+
+              <!-- Scientific Name -->
+              <label class="mr-5 mt-3">Escolha um nome científico para adicionar</label>
+              <select name="addScientificNameSelection">
+                <option value="" disabled selected>Escolha...</option>
+              <?php 
+
+              $sql = "SELECT CommonName From scientificnames;";
+              $query = mysqli_query($conn, $sql);
+
+              while($fetch=mysqli_fetch_assoc($query)){ ?>
+                <option value=<?php echo $fetch['CommonName']; ?>><?php echo $fetch['CommonName']; ?></option>
+              <?php } ?>
+
+              </select>
+
+              <!-- Photo -->
+              <label class="mr-5 mt-3">Escolha uma foto para adicionar</label>
+              <select name="addPhotoSelection">
+                <option value="" disabled selected>Escolha...</option>
+              <?php 
+
+              $sql = "SELECT Name From fotos;";
+              $query = mysqli_query($conn, $sql);
+
+              while($fetch=mysqli_fetch_assoc($query)){ ?>
+                <option value=<?php echo $fetch['Name']; ?>><?php echo $fetch['Name']; ?></option>
+              <?php } ?>
+
+              </select>
+
+              <!-- Animal detail -->
+              <label class="mr-5 mt-3 mb-3">Escolha um detalhe para adicionar</label>
+              <select name="addAnimalDetailSelection">
+                <option value="" disabled selected>Escolha...</option>
+              <?php 
+
+              $sql = "SELECT Height From detailsanimals;";
+              $query = mysqli_query($conn, $sql);
+
+              while($fetch=mysqli_fetch_assoc($query)){ ?>
+                <option value=<?php echo $fetch['Height']; ?>><?php echo $fetch['Height']; ?></option>
+              <?php } ?>
+
+              </select>
+
+              <!-- Animal other details -->
+              <label class="col-12 col-md-7">Escolha um nome</label>
+              <input class="col-12 col-md-4 mb-3" type="text" name="nameAnimalInput" placeholder="Ex.: Pantufa">
+              <label class="col-12 col-md-7">Escolha uma data de nascimento(opcional)</label>
+              <input class="col-12 col-md-4 mb-3" type="datetime-local" name="dateBirthAnimal">
+              <label class="col-12 col-md-7">Escolha uma data de chegada(opcional)</label>
+              <input class="col-12 col-md-4 mb-3" type="datetime-local" name="dateArrivalAnimal">
+              <label class="col-12 col-md-7">Escolha uma data de morte(opcional)</label>
+              <input class="col-12 col-md-4 mb-3" type="datetime-local" name="dateDeathAnimal">
+
+              <label class="col-12 col-md-7 mb-3">Escolha o género</label>
+              <select name="addGenderSelection">
+                <option value="" disabled selected>Escolha...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+
+              <label class="col-12 col-md-7 mb-3">Escolha um número para a jaula</label>
+              <input type="number" name="cageNumberAnimal">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-              <button type="submit" class="btn btn-primary">Submeter</button>
+              <button type="submit" name="addAnimal" class="btn btn-primary">Submeter</button>
             </div>
           </form>
         </div>
@@ -95,7 +176,45 @@
             </button>
           </div>
           <div class="modal-body">
-            ...
+            <!-- Fetch data from database to select the one that is to eliminate -->
+            <!-- Store -->
+            <label class="mr-5">Escolha uma loja para adicionar</label>
+            <select name="addStoreSelection">
+              <option value="" disabled selected>Escolha...</option>
+            <?php 
+            
+            require '../php/includes/connection.php';
+
+            $sql = "SELECT Name From stores;";
+            $query = mysqli_query($conn, $sql);
+
+            while($fetch=mysqli_fetch_assoc($query)){ ?>
+              <option value=<?php echo $fetch['Name']; ?>><?php echo $fetch['Name']; ?></option>
+            <?php } ?>
+
+            </select>
+
+            <!-- Foto -->
+            <label class="mr-5">Escolha uma foto para adicionar</label>
+            <select name="addPhotoSelection">
+              <option value="" disabled selected>Escolha...</option>
+            <?php
+
+            $sql = "SELECT Name From fotos;";
+            $query = mysqli_query($conn, $sql);
+
+            while($fetch=mysqli_fetch_assoc($query)){ ?>
+              <option value=<?php echo $fetch['Name']; ?>><?php echo $fetch['Name']; ?></option>
+            <?php } ?>
+
+            </select>
+
+            <label class="col-12 col-md-7">Escolha um nome para o produto</label>
+            <input class="col-12 col-md-4 mb-3" type="text" name="addNameProductInput" placeholder="Ex.: bosta">
+            <label class="col-12 col-md-7">Escolha um preço para o produto</label>
+            <input class="col-12 col-md-4 mb-3" type="number" name="addPriceProductInput" step=".01">
+            <label class="col-12 col-md-7">Escolha uma quantidade para o produto</label>
+            <input class="col-12 col-md-4 mb-3" type="number" name="addQuantityProductInput">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -288,7 +407,7 @@
           <form action="./php/removeScientificNames.php" method="post">
             <div class="modal-body">
               <!-- Fetch data from database to select the one that is to eliminate -->
-              <label class="mr-5">Escolha um produto para remover</label>
+              <label class="mr-5">Escolha um nome científico para remover</label>
               <select id="removeScientificNameSelection" name="removeScientificNameSelection">
                 <option value="" disabled selected>Escolha...</option>
               <?php 
@@ -417,7 +536,7 @@
               $query = mysqli_query($conn, $sql);
 
               while($fetch=mysqli_fetch_assoc($query)){ ?>
-                <option value=<?php echo $fetch['Name']; ?>><?php echo $fetch['Name']; ?></option>
+                <option value="<?php echo $fetch['Name']; ?>"><?php echo $fetch['Name']; ?></option>
               <?php } ?>
 
               </select>
@@ -449,149 +568,234 @@
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Remove Enclosure-->
+    <div class="modal fade" id="removeEnclosureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produtos</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Remover Recintos</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <form action="./php/removeEnclosures.php" method="post">
+            <div class="modal-body">
+              <!-- Fetch data from database to select the one that is to eliminate -->
+              <label class="mr-5">Escolha um recinto para remover</label>
+                <select id="removeEnclosureSelection" name="removeEnclosureSelection">
+                  <option value="" disabled selected>Escolha...</option>
+                <?php 
+                
+                require '../php/includes/connection.php';
+
+                $sql = "SELECT Name From enclosures;";
+                $query = mysqli_query($conn, $sql);
+
+                while($fetch=mysqli_fetch_assoc($query)){ ?>
+                  <option value=<?php echo $fetch['Name']; ?>><?php echo $fetch['Name']; ?></option>
+                <?php } ?>
+
+                </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="removeEnclosure" class="btn btn-primary">Submeter</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Add Photo-->
+    <div class="modal fade" id="addFotoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produtos</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Adicionar fotos</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <form action="./php/addPhoto.php" method="post">
+            <div class="modal-body">
+              <label>Escolha um link para a foto: </label>
+              <input type="text" name="linkInputPhoto">
+              <label class="mt-3">Escolha um nome para a foto: </label>
+              <input type="text" name="nameInputPhoto" placeholder="Ex.: Einstein">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="addPhoto" class="btn btn-primary">Submeter</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Remove Photo -->
+    <div class="modal fade" id="removeFotoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produtos</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Remover foto</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <form action="./php/removePhotos.php" method="post">
+            <div class="modal-body">
+              <!-- Fetch data from database to select the one that is to eliminate -->
+              <label class="mr-5">Escolha uma foto para remover</label>
+                  <select id="removePhotoSelection" name="removePhotoSelection">
+                    <option value="" disabled selected>Escolha...</option>
+                  <?php 
+                  
+                  require '../php/includes/connection.php';
+
+                  $sql = "SELECT Name From fotos;";
+                  $query = mysqli_query($conn, $sql);
+
+                  while($fetch=mysqli_fetch_assoc($query)){ ?>
+                    <option value=<?php echo $fetch['Name']; ?>><?php echo $fetch['Name']; ?></option>
+                  <?php } ?>
+
+                  </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="removePhoto" class="btn btn-primary">Submeter</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Add Animal Detail -->
+    <div class="modal fade" id="addAnimalDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produtos</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Adicionar Detalhes de Animal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <form action="./php/addAnimalDetail.php" method="post">
+            <div class="modal-body">
+              <label class="col-12 col-md-5">Adicione a altura:</label>
+              <input class="col-12 col-md-6 mt-3" type="number" name="heightInputAnimal" step=".01">
+              <label class="col-12 col-md-5">Adicione o peso:</label>
+              <input class="col-12 col-md-6 mt-3" type="number" name="weightInputAnimal" step=".01">
+              <label class="col-12 col-md-5">Adicione a idade:</label>
+              <input class="col-12 col-md-6 mt-3" type="number" name="ageInputAnimal">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="addAnimalDetail" class="btn btn-primary">Submeter</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Remove Animal Detail -->
+    <div class="modal fade" id="removeAnimalDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produtos</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Remover detalhe de animal</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <form action="./php/removeAnimalDetails.php" method="post">
+            <div class="modal-body">
+              <!-- Fetch data from database to select the one that is to eliminate -->
+              <label class="mr-5">Escolha um detalhe de animal para remover</label>
+              <select name="removeAnimalDetailSelection">
+                <option value="" disabled selected>Escolha...</option>
+              <?php 
+              
+              require '../php/includes/connection.php';
+
+              $sql = "SELECT Height From detailsanimals;";
+              $query = mysqli_query($conn, $sql);
+
+              while($fetch=mysqli_fetch_assoc($query)){ ?>
+                <option value=<?php echo $fetch['Height']; ?>><?php echo $fetch['Height']; ?></option>
+              <?php } ?>
+
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="removeAnimalDetail" class="btn btn-primary">Submeter</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Add Plant Detail -->
+    <div class="modal fade" id="addPlantDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produtos</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Adicionar detalhe de planta</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <form action="./php/addPlantDetail.php" method="post">
+            <div class="modal-body">
+              <label class="col-12 col-md-5">Adicione a altura:</label>
+              <input class="col-12 col-md-6 mt-3" type="number" name="heightInputPlant" step=".01">
+              <label class="col-12 col-md-5">Adicione a idade:</label>
+              <input class="col-12 col-md-6 mt-3" type="number" name="ageInputPlant">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="addPlantDetail" class="btn btn-primary">Submeter</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="addProductsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Remove Plant Detail -->
+    <div class="modal fade" id="removePlantDetailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Adicionar Produtos</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Remover detalhe de planta</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+          <form action="./php/removePlantsDetails.php" method="post">
+            <div class="modal-body">
+              <!-- Fetch data from database to select the one that is to eliminate -->
+              <label class="mr-5">Escolha um detalhe de planta para remover</label>
+              <select name="removePlantDetailSelection">
+                <option value="" disabled selected>Escolha...</option>
+              <?php 
+              
+              require '../php/includes/connection.php';
+
+              $sql = "SELECT Height From detailsplants;";
+              $query = mysqli_query($conn, $sql);
+
+              while($fetch=mysqli_fetch_assoc($query)){ ?>
+                <option value=<?php echo $fetch['Height']; ?>><?php echo $fetch['Height']; ?></option>
+              <?php } ?>
+
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+              <button type="submit" name="removePlantDetail" class="btn btn-primary">Submeter</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
