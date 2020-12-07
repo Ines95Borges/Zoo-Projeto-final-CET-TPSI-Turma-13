@@ -58,7 +58,7 @@
     <!--CARDS-->
     <div class="container mt-5">
       <div class="row"> 
-        <div class="card d-inline" style="width: 18rem; margin-right: 3%; margin-left: auto;">
+        <div class="card d-inline index-cards" style="width: 18rem; margin-right: 3%; margin-left: auto;">
           <img src="./img/indexCards/store.jpg" class="card-img-top" alt="Store">
           <div class="card-body">
             <h5 class="card-title">Loja</h5>
@@ -67,16 +67,16 @@
           </div>
         </div>
 
-        <div class="card d-inline" style="width: 18rem; margin-right: 3%;">
+        <div class="card d-inline index-cards" style="width: 18rem; margin-right: 3%;">
           <img src="./img/indexCards/zoo-tickets.jpg" class="card-img-top" alt="Zoo tickets">
-          <div class="card-body index-cards">
+          <div class="card-body">
             <h5 class="card-title">Zoo tickets</h5>
             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quam molestiae. Dolorum alias magni quae magnam perspiciatis provident eligendi nostrum. Saepe odit molestias veritatis quaerat eius perferendis debitis modi sed.</p>
             <a href="./tickets.php" class="btn btn-primary">Comprar tickets</a>
           </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card index-cards" style="width: 18rem;">
           <img src="./img/indexCards/zoo-events.jpg" class="card-img-top" alt="Zoo Events">
           <div class="card-body">
             <h5 class="card-title">Zoo events</h5>
@@ -88,7 +88,7 @@
 
       <div class="row mt-3"> 
 
-        <div class="card" style="width: 18rem; margin-right: 3%;">
+        <div class="card index-cards" style="width: 18rem; margin-right: 3%;">
           <img src="./img/indexCards/zoo-animals.jpg" class="card-img-top" alt="Zoo animals">
           <div class="card-body">
             <h5 class="card-title">Animais do Zoo</h5>
@@ -97,7 +97,7 @@
           </div>
         </div>
 
-        <div class="card" style="width: 18rem; margin-right: 3%;">
+        <div class="card index-cards" style="width: 18rem; margin-right: 3%;">
           <img src="./img/indexCards/zoo-plants.jpg" class="card-img-top" alt="Zoo plants">
           <div class="card-body">
             <h5 class="card-title">Plantas do Zoo</h5>
@@ -106,7 +106,7 @@
           </div>
         </div>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card index-cards" style="width: 18rem;">
           <img src="./img/indexCards/zoo-institution.jpg" class="card-img-top" alt="Zoo institutions">
           <div class="card-body">
             <h5 class="card-title">Instituições</h5>

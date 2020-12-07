@@ -33,6 +33,10 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.index-cards {
+  margin-top: auto;
+}
+
 .ticket-card:hover {
   background-color: #888;
 }
