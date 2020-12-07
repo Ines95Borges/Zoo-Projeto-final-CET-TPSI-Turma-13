@@ -39,8 +39,12 @@ $mainGrey: #ececec;
 
 // Styling the ticket cards
 .ticket-card:hover{
-  background-color: #666;
+  background-color: #888;
 }
+.text-muted:hover{
+  color: white;
+}
+
 
 // Start of shopping cart button
 .cart-items{

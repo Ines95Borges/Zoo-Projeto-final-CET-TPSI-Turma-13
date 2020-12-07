@@ -18,6 +18,13 @@
   
   <?php require 'navbar.php'; ?>
 
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Tickets</li>
+    </ol>
+  </nav>
+
   <header class="mb-5 mt-5">
     <div class="row text-center">
       <h1>Comprar tickets</h1>
@@ -34,7 +41,7 @@
               <h5 class="card-title ticket-card">Ticket único</h5>
               <p class="card-text ticket-card">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti aut dolorum laboriosam! Eveniet voluptatem quo nostrum, quaerat assumenda repellat earum? Similique soluta maxime, repudiandae quos magnam facere quam placeat perspiciatis.</p>
             </div>
-            <div class="card-footer text-center ticket-card">
+            <div class="card-footer text-center">
               <small class="text-muted">Clique para comprar</small>
             </div>
           </div>

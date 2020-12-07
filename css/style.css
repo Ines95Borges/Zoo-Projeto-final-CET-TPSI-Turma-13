@@ -34,7 +34,11 @@
 }
 
 .ticket-card:hover {
-  background-color: #666;
+  background-color: #888;
+}
+
+.text-muted:hover {
+  color: white;
 }
 
 .cart-items {
