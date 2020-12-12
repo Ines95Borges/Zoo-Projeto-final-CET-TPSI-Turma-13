@@ -13,7 +13,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
-  <script src="./js/addMoreButton.js" defer></script>
+  <script src="./js/addMoreButtonAnimals.js" defer></script>
 </head>
 <body>
   

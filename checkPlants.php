@@ -13,6 +13,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
+  <script src="./js/addMoreButtonPlants.js" defer></script>
 </head>
 <body>
   
@@ -46,13 +47,13 @@
         </li>
       </ul>
 
-      <div class="container d-md-flex flex-wrap justify-content-around">
+      <div class="container d-md-flex flex-wrap justify-content-around" id="showAnimalsPlants">
 
         <?php
 
         require_once './php/includes/connection.php';
 
-        $sql = "SELECT * FROM v_show_plants";
+        $sql = "SELECT * FROM v_show_plants ORDER BY Plant_ID LIMIT 6";
         $query = mysqli_query($conn, $sql);
 
         while($fetch = mysqli_fetch_assoc($query)){ ?>
@@ -63,7 +64,18 @@
               <a class="btn btn-primary itemBtn">Detalhes</a>
             </div>
           </div>
+          <?php $id = $fetch['Plant_ID']; ?>
         <?php } ?>
+
+        <div class="addMoreContainer">
+          <hr>
+          <div class="addMoreCenterItems">
+            <div class="addMoreButton" data-id=<?php echo $id; ?> >
+              +
+            </div>
+            <h6>Show more 6</h6>
+          </div>
+        </div>
 
       </div>
     </div>

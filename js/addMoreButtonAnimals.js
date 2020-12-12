@@ -4,14 +4,13 @@ $(".addMoreButton").on('click', (e) => {
   var id = $('.addMoreButton').data("id");
 
   $.ajax({
-    url: "./php/loadMore.php",
+    url: "./php/loadMoreAnimals.php",
     type: "post",
     data: {id:id},
     success: function(response){
       $(".addMoreContainer").remove();
       $('#showAnimalsPlants').append(response);
     }
-  }).fail((e) => {
-    alert(e + " Fail!");
   });
+
 });

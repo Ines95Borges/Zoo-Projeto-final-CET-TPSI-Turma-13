@@ -11,6 +11,7 @@
   <script src="js/popper.min.js"></script>
   <script src="./js/jquery.min.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
+  <script src="./js/addMoreButtonStore.js" defer></script>
 </head>
 <body>
 
@@ -50,19 +51,19 @@
         </li>
       </ul>
 
-      <div class="container d-md-flex justify-content-around" id="products">
+      <div class="container d-md-flex flex-wrap justify-content-around" id="products">
 
         <?php
 
         require_once './php/includes/connection.php';
 
-        $sql = "SELECT * FROM v_show_products";
+        $sql = "SELECT * FROM v_show_products ORDER BY Product_ID limit 6";
         $query = mysqli_query($conn, $sql);
         $counter=1;
 
         while($fetch = mysqli_fetch_assoc($query)){
         ?>
-          <div class="card" data-id=<?php echo (string)$counter; ?> style="width: 18rem;">
+          <div class="card" data-id=<?php echo (string)$counter; ?> style="width: 18rem; margin-bottom: 20px;">
             <img class="card-img-top" src="<?php echo $fetch['Link']; ?>" alt="<?php echo $fetch['NameProduct']; ?>">
             <div class="card-body">
               <h5 class="card-title"><?php echo $fetch['NameProduct']; ?></h5>
@@ -70,20 +71,30 @@
             </div>
           </div>
 
-          <?php ; ?>
-
-        <?php } 
+        <?php $id = $fetch['Product_ID']; } 
 
         mysqli_close($conn);
         mysqli_free_result($query);
 
         ?>
 
+        <div class="addMoreContainer">
+          <hr>
+          <div class="addMoreCenterItems">
+            <div class="addMoreButton" data-id=<?php echo $id; ?> >
+              +
+            </div>
+            <h6>Show more 6</h6>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <?php require 'shoppingCartSidebar.php'; ?>
   </main>
+
+  <?php require_once './footer.html'; ?>
 
 </body>
 </html>
