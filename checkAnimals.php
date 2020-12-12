@@ -13,6 +13,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
+  <script src="./js/addMoreButton.js" defer></script>
 </head>
 <body>
   
@@ -52,19 +53,17 @@
         </li>
       </ul>
 
-      <div class="container d-md-flex flex-wrap justify-content-around">
+      <div class="container d-md-flex flex-wrap justify-content-around" id="showAnimalsPlants">
 
         <?php
 
         require_once './php/includes/connection.php';
 
-        $sql = "SELECT * FROM v_show_animals";
-        $query = mysqli_query($conn, $sql);
+        $sql = "SELECT * FROM v_show_animals ORDER BY Animal_ID limit 6";
+        $query = mysqli_query($conn, $sql) or die($sql);
         $num_rows = mysqli_num_rows($query);
-        $countAnimalsDisplayed = 0;
 
-        while($fetch = mysqli_fetch_assoc($query)){ 
-          $countAnimalsDisplayed++;?>
+        while($fetch = mysqli_fetch_assoc($query)){ ?>
           <div class="card" style="width: 18rem; margin-bottom:20px;">
             <img class="card-img-top" src="<?php echo $fetch['FotoLink']; ?>" alt="<?php echo $fetch['Name']; ?>">
             <div class="card-body" style="display: flex; align-items: flex-end; justify-content: space-between;">
@@ -72,17 +71,19 @@
               <a class="btn btn-primary itemBtn">Detalhes</a>
             </div>
           </div>
-        <?php if($countAnimalsDisplayed % 6 == 0){ ?>
-          <div class="addMoreContainer">
-            <hr>
-            <div class="addMoreCenterItems">
-              <div class="addMoreButton">
-                +
-              </div>
-              <h6>Show more 6</h6>
+          <?php $id = $fetch['Animal_ID']; ?>
+        <?php } ?>
+        
+        <div class="addMoreContainer">
+          <hr>
+          <div class="addMoreCenterItems">
+            <div class="addMoreButton" data-id=<?php echo $id; ?> >
+              +
             </div>
+            <h6>Show more 6</h6>
           </div>
-        <?php break; } } ?>
+        </div>
+        
 
       </div>
     </div>

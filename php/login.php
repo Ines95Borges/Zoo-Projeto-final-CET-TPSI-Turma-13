@@ -29,6 +29,12 @@ if (isset($_POST['login'])){
           session_start();
           $_SESSION['Username'] = $row['Username'];
           $_SESSION['Client_ID'] = $row['Client_ID'];
+          $client_ID = $_SESSION['Client_ID'];
+          # Get the privilege
+          $sql = "SELECT Privilege FROM privileges WHERE Client_ID = $client_ID";
+          $query = mysqli_query($conn, $sql) or die($sql);
+          $fetch = mysqli_fetch_assoc($query);
+          $_SESSION['Privilege'] = $fetch['Privilege'];
           header("Location:../index.php?login=success");
           exit();
         }else{

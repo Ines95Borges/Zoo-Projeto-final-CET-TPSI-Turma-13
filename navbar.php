@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
         <li class="nav-item mr-4">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="./index.php">Home</a>
         </li>
         <li class="nav-item mr-4">
-          <a class="nav-link" href="store.php">Loja</a>
+          <a class="nav-link" href="./store.php">Loja</a>
         </li>
         <li class="nav-item dropdown mr-4">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -27,14 +27,21 @@
           </ul>
         </li>
         <li class="nav-item mr-4">
-          <a class="nav-link" href="aboutus.php">Sobre nós</a>
+          <a class="nav-link" href="./aboutus.php">Sobre nós</a>
         </li>
         <li class="nav-item mr-4">
-          <a class="nav-link" href="contact.php">Contacte-nos</a>
+          <a class="nav-link" href="./contact.php">Contacte-nos</a>
         </li>
         <li class="nav-item mr-4">
-          <a class="nav-link" href="events.php">Eventos</a>
+          <a class="nav-link" href="./events.php">Eventos</a>
         </li>
+        <!-- Display backoffice button -->
+        <?php if(isset($_SESSION['Privilege'])){ 
+          if($_SESSION['Privilege'] == 1){?>
+            <li class="nav-item mr-4">
+              <a class="nav-link" href="./backoffice/mainPage.php">Backoffice</a>
+            </li>
+        <?php }} ?>
       </ul>
 
       <?php if(!isset($_SESSION['Client_ID'])){ ?>
@@ -85,11 +92,11 @@
                 <div class="m-2">
                   <div class="row mb-4">
                     <label for="" class="d-flex justify-content-center">Nome de utilizador</label>
-                    <input type="text" name="usernameLogin" id="usernameLogIn">
+                    <input type="text" name="usernameLogin" id="usernameLogIn" autocomplete="username">
                   </div>
                   <div class="row">
                     <label for="" class="d-flex justify-content-center">Palavra-passe</label>
-                    <input type="password" name="pwdLogin" id="pwdLogIn" class="col-11 pwd">
+                    <input type="password" name="pwdLogin" id="pwdLogIn" class="col-11 pwd" autocomplete="current-password">
                     <button type="button" onclick="showPwd()" onmouseout="hidePwd()" class="col-1"><span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span></button>
                   </div>
                   <div class="g-signin2 mt-3 d-flex justify-content-center"></div>
@@ -140,7 +147,7 @@
                 <label for="validationCustomUsername" class="form-label">Nome de utilizador</label>
                 <div class="input-group">
                   <span class="input-group-text" id="inputGroupPrepend">@</span>
-                  <input type="text" class="form-control" name="username" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Ex.: pikachu" required>
+                  <input type="text" class="form-control" name="username" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Ex.: pikachu" required  autocomplete="username">
                   <div class="invalid-feedback">
                     Por favor escolha um nome de utilizador.
                   </div>
@@ -150,7 +157,7 @@
             <div class="mb-2">
               <div class="col-12 mb-2">
                 <label for="pwdSignUp1" class="form-label">Password</label>
-                <input type="password" class="form-control" name="pwd" id="pwdSignUp1" required>
+                <input type="password" class="form-control" name="pwd" id="pwdSignUp1" required autocomplete="new-password">
                 <div class="invalid-feedback">
                   Por favor introduza uma password válida.
                 </div>
@@ -159,7 +166,7 @@
               </div>
               <div class="col-12">
                 <label for="pwdSignUp2" class="form-label">Repetir Password</label>
-                <input type="password" class="form-control" name="pwd-repeat" id="pwdSignUp2" required>
+                <input type="password" class="form-control" name="pwd-repeat" id="pwdSignUp2" required autocomplete="new-password">
                 <div class="invalid-feedback">
                   Pro favor introduza uma password válida.
                 </div>
