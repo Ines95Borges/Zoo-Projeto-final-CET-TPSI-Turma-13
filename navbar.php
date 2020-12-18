@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg topNavbar navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="./index.php"><img width=75vw src="./img/logo.jpg" alt="Logo Zoo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="./tickets.php">Comprar tickets</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Instituições</a></li>
+            <li><a class="dropdown-item" href="./institutions.php">Instituições</a></li>
           </ul>
         </li>
         <li class="nav-item mr-4">
@@ -39,7 +39,7 @@
         <?php if(isset($_SESSION['Privilege'])){ 
           if($_SESSION['Privilege'] == 1){?>
             <li class="nav-item mr-4">
-              <a class="nav-link" href="./backoffice/mainPage.php">Backoffice</a>
+              <a class="nav-link" href="./backoffice/mainPage.php?backoffice">Backoffice</a>
             </li>
         <?php }} ?>
       </ul>

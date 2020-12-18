@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   background-image: url(../img/backoffice/backoffice-background.jpg);
 }
@@ -29,16 +34,17 @@ header h1 {
   height: 10vw;
   font-size: 2vw;
   border-radius: 15px;
-  -webkit-box-shadow: 10px 10px 10px 10px gray;
-          box-shadow: 10px 10px 10px 10px gray;
-  background-color: #2f792f;
+  -webkit-box-shadow: 10px 10px 10px 10px #FFCAD4;
+          box-shadow: 10px 10px 10px 10px #FFCAD4;
+  background-color: #1C4A21;
+  color: #FCE709;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   margin-bottom: 3vw;
 }
 
 .changeButton:hover {
-  background-color: rgba(134, 25, 25, 0.808);
+  background-color: #750D37;
   border-radius: 30px;
 }
 
@@ -59,8 +65,8 @@ header h1 {
     width: 100%;
     margin-bottom: 10vh;
     font-size: 4vw;
-    -webkit-box-shadow: 5px 5px 5px 5px gray;
-            box-shadow: 5px 5px 5px 5px gray;
+    -webkit-box-shadow: 5px 5px 5px 5px #FFCAD4;
+            box-shadow: 5px 5px 5px 5px #FFCAD4;
   }
 }
 /*# sourceMappingURL=backofficeStyle.css.map */

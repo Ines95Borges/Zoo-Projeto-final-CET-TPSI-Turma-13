@@ -28,12 +28,12 @@
 
   <main>
     <div class="row-col d-md-flex mt-5">
-      <ul class="nav flex-column">
+      <ul class="nav flex-column sidebar">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tickets</a>
+          <a class="nav-link" href="./tickets.php">Tickets</a>
         </li>
         <hr class="mx-3">
         <li class="nav-item">
@@ -75,7 +75,7 @@
         <?php } ?>
         
         <div class="addMoreContainer">
-          <hr>
+          <hr class="hrAddMore">
           <div class="addMoreCenterItems">
             <div class="addMoreButton" data-id=<?php echo $id; ?> >
               +

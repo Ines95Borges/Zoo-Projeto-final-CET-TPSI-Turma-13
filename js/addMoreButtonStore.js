@@ -1,8 +1,7 @@
-$(".addMoreButton").on('click', (e) => {
+$(".addMoreButtonStore").on('click', (e) => {
   e.preventDefault();
 
-  var id = $('.addMoreButton').data("id");
-  console.log(id);
+  var id = $('.addMoreButtonStore').data("id");
 
   $.ajax({
     url: "./php/loadMoreStore.php",

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sobre nós</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css" defer>
@@ -26,7 +27,7 @@
 
   <main>
 
-    <div class="container">
+    <div class="container aboutusContainer">
       <h1>Sobre nós</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sit dolor vel tempore quisquam consectetur neque labore reprehenderit beatae? Aliquid consectetur, assumenda modi saepe praesentium sit molestiae vel odio quod.</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque provident ducimus dolorum dolor facere nobis ut soluta laborum expedita distinctio, eligendi repellat perspiciatis quas dignissimos autem esse totam aperiam magni!</p>

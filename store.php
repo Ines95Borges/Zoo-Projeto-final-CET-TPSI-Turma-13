@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
@@ -26,7 +27,7 @@
   
   <main>
     <div class="row-col d-md-flex mt-5">
-      <ul class="nav flex-column">
+      <ul class="nav flex-column sidebar">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
@@ -79,9 +80,9 @@
         ?>
 
         <div class="addMoreContainer">
-          <hr>
+          <hr class="hrAddMore">
           <div class="addMoreCenterItems">
-            <div class="addMoreButton" data-id=<?php echo $id; ?> >
+            <div class="addMoreButtonStore" data-id=<?php echo $id; ?> >
               +
             </div>
             <h6>Show more 6</h6>

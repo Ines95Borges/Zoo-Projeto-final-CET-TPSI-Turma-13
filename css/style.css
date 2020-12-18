@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 #loggedInDropdown {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12,25 +17,6 @@
   height: auto;
   overflow: hidden;
   border-radius: 50%;
-}
-
-.footer-links {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.footer-links .col-md-4 {
-  border-left: 3px dotted blue;
-}
-
-.footer-rights {
-  background-color: black;
-}
-
-.footer-rights small {
-  color: blanchedalmond;
-  font-size: 18px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .index-cards {
@@ -57,14 +43,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  top: 10;
-  right: -48;
-  width: 15px;
-  height: 15px;
-  background-color: coral;
-  color: aliceblue;
+  width: 17px;
+  height: 17px;
   border-radius: 30%;
-  border: 1px solid white;
 }
 
 /* --------------- Cart ---------------- */
@@ -179,7 +160,7 @@
 }
 
 .remove-item {
-  color: grey;
+  color: #750D37;
   cursor: pointer;
 }
 
@@ -204,13 +185,6 @@
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.addMoreContainer hr {
-  width: 100%;
-  border-width: 3;
-  background-color: #05ff05;
-  color: #05ff05;
 }
 
 .addMoreContainer .addMoreCenterItems {
@@ -249,5 +223,249 @@
   border-radius: 50%;
 }
 
+.addMoreContainer .addMoreCenterItems .addMoreButtonStore {
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ffbb00;
+  background-color: #ecec9f;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+
 /*----------------End of Add More -----------------*/
+/*---------------- Navbar styling ------------------*/
+.topNavbar {
+  position: -webkit-sticky;
+  position: sticky;
+  border-bottom: 3px solid #75FFCD;
+}
+
+.topNavbar .navbar-brand img, .topNavbar svg {
+  border-radius: 10px;
+}
+
+.topNavbar .navbar-nav .nav-link {
+  font-size: 14px;
+  color: #FCE709;
+}
+
+.topNavbar .navbar-nav .nav-link:hover {
+  font-size: 16px;
+}
+
+.topNavbar .btn-outline-success {
+  border-color: #75FFCD;
+  color: #75FFCD;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.topNavbar .btn-outline-success:hover {
+  background-color: #75FFCD;
+  border-color: #1C4A21;
+  color: #1C4A21;
+}
+
+.topNavbar .cart-btn {
+  background-color: #FCE709;
+}
+
+.topNavbar .cart-btn .cart-items {
+  border: 2px solid #1C4A21;
+  background-color: #75FFCD;
+  color: #1C4A21;
+  top: 19px;
+  right: 25px;
+}
+
+.topNavbar .navbarDropdown {
+  background-color: #75FFCD;
+}
+
+/*---------------- End of Navbar styling ------------------*/
+/*---------------- Styling of the body ------------------*/
+body {
+  background-color: #1C4A21;
+  font-size: 14px;
+}
+
+body .indexHeading {
+  color: #FCE709;
+  font-size: 30px;
+}
+
+body .sidebar {
+  border-right: 3px solid #FFCAD4;
+}
+
+body .sidebar li {
+  margin-right: 20px;
+}
+
+body .sidebar a {
+  color: #FFCAD4;
+  text-decoration: none;
+}
+
+body .sidebar a:hover {
+  font-size: 16px;
+}
+
+body .sidebar h6 {
+  color: #FCE709;
+}
+
+body #products .addMoreCenterItems h6, body #showAnimalsPlants .addMoreCenterItems h6 {
+  color: #FFCAD4;
+}
+
+body #products .hrAddMore, body #showAnimalsPlants .hrAddMore {
+  width: 100%;
+  color: #FFCAD4;
+  height: 3px;
+}
+
+body .aboutusContainer h1 {
+  color: #FCE709;
+}
+
+body .aboutusContainer p {
+  color: #FFCAD4;
+}
+
+body .contactContainer aside {
+  border: 2px solid #FFCAD4;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+body .contactContainer aside h3, body .contactContainer aside h6 {
+  color: #FCE709;
+  margin-top: 10px;
+}
+
+body .contactContainer aside p {
+  color: #FFCAD4;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+body .contactContainer aside label {
+  color: #FFCAD4;
+}
+
+body .contactContainer aside button {
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  background-color: #750D37;
+  color: #75FFCD;
+  border: 2px solid #75FFCD;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+body .contactContainer aside .nameInput {
+  width: 100%;
+}
+
+body .eventContainer h3 a {
+  color: #FCE709;
+  text-decoration: none;
+}
+
+body .eventContainer h3 a:hover {
+  cursor: pointer;
+}
+
+body .eventContainer p {
+  color: #FFCAD4;
+}
+
+body .ticketHeader h1 {
+  color: #FCE709;
+}
+
+body .institutionsMain h1 {
+  color: #FCE709;
+}
+
+body .institutionsMain #intitutionsContainer h2, body .institutionsMain #intitutionsContainer h3, body .institutionsMain #intitutionsContainer h4, body .institutionsMain #intitutionsContainer h5, body .institutionsMain #intitutionsContainer h6 {
+  color: #FFCAD4;
+}
+
+body .institutionsMain hr {
+  color: #75FFCD;
+}
+
+/*---------------- End of body styling ------------------*/
+/*---------------- Styling of the footer -------------------*/
+.footer .footerSeparator {
+  color: #75FFCD;
+  height: 3px;
+}
+
+.footer .footer-links {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footer .footer-links .col-md-4 {
+  border-left: 3px dotted #75FFCD;
+}
+
+.footer .footer-rights {
+  background-color: #750D37;
+}
+
+.footer .footer-rights small {
+  color: #FCE709;
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer .listHeadings {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FCE709;
+}
+
+.footer .list-item a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #75FFCD;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.footer .list-item a:hover {
+  font-size: 16px;
+  color: #FFCAD4;
+}
+
+.footer blockquote {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #750D37;
+  position: relative;
+  top: -110px;
+  text-align: center;
+}
+
+.footer .footer-links img {
+  margin: auto;
+}
+
+/*------------------- End of Footer styling ---------------------*/
 /*# sourceMappingURL=style.css.map */

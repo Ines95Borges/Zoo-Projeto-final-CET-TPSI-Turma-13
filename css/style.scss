@@ -1,10 +1,12 @@
 // Variables
 $mainTransition: all 3s;
 $mainSpacing: 0.1rem;
-$primaryColor:  #f09d51;
-$mainWhite: #fff;
-$mainBlack: #222;
-$mainGrey: #ececec;
+$green: #1C4A21;
+$aquamarine: #75FFCD;
+$pink: #FFCAD4;
+$claret: #750D37;
+$yellow: #FCE709;
+$fontSize: 14px;
 
 // Styling the dropdown image when the user is logged in
 #loggedInDropdown{
@@ -16,24 +18,6 @@ $mainGrey: #ececec;
     height: auto;
     overflow: hidden;
     border-radius: 50%;
-  }
-}
-
-// Styling the space between divs and margins in the footer
-.footer-links{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  .col-md-4{
-    border-left: 3px dotted blue;
-  }
-}
-
-.footer-rights{
-  background-color: black;
-  small{
-    color: blanchedalmond;
-    font-size: 18px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 }
 
@@ -58,14 +42,9 @@ $mainGrey: #ececec;
   justify-content: center;
   text-align: center;
   align-items: center;
-  top: 10;
-  right: -48;
-  width: 15px;
-  height: 15px;
-  background-color: coral;
-  color: aliceblue;
+  width: 17px;
+  height: 17px;
   border-radius: 30%;
-  border: 1px solid white;
 }
 // ---------------End of shopping cart button-----------------
 /* --------------- Cart ---------------- */
@@ -150,7 +129,7 @@ $mainGrey: #ececec;
 }
 
 .remove-item {
-  color: grey;
+  color: $claret;
   cursor: pointer;
 }
 /*---------- End of Cart Item -------------------- */
@@ -173,12 +152,6 @@ $mainGrey: #ececec;
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  hr{
-    width: 100%;
-    border-width: 3;
-    background-color: rgb(5, 255, 5);
-    color: rgb(5, 255, 5);
-  }
   .addMoreCenterItems{
     display: flex;
     width: 100%;
@@ -198,7 +171,223 @@ $mainGrey: #ececec;
       text-align: center;
       border-radius: 50%;
     }
+    .addMoreButtonStore{
+      margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border: 3px solid rgb(255, 187, 0);
+      background-color: rgb(236, 236, 159);
+      font-size: 20px;
+      text-align: center;
+      border-radius: 50%;
+    }
   }
 }
 
 /*----------------End of Add More -----------------*/
+
+/*---------------- Navbar styling ------------------*/
+.topNavbar{
+  position: sticky;
+  border-bottom: 3px solid $aquamarine;
+  .navbar-brand img, svg{
+    border-radius: 10px;
+  }
+  .navbar-nav .nav-link{
+    font-size: $fontSize;
+    color: $yellow;
+  }
+  .navbar-nav .nav-link:hover{
+    font-size: 16px;
+  }
+  .btn-outline-success{
+    border-color: $aquamarine;
+    color: $aquamarine;
+    transition: all 0.3s linear;
+  }
+  .btn-outline-success:hover{
+    background-color: $aquamarine;
+    border-color: $green;
+    color: $green;
+  }
+  .cart-btn{
+    background-color: $yellow;
+    .cart-items{
+      position:relative;
+      border: 2px solid $green;
+      background-color: $aquamarine;
+      color: $green;
+      top: 19px;
+      right: 25px;
+    }
+  }
+  .navbarDropdown{
+    background-color: $aquamarine;
+  }
+}
+
+/*---------------- End of Navbar styling ------------------*/
+
+/*---------------- Styling of the body ------------------*/
+body{
+  background-color:$green;
+  font-size: $fontSize;
+  .indexHeading{
+    color: $yellow;
+    font-size: 30px;
+  }
+  .sidebar{
+    border-right: 3px solid $pink;
+    li{
+      margin-right: 20px;
+    }
+    a{
+      color: $pink;
+      text-decoration: none;
+    }
+    a:hover{
+      font-size: 16px;
+    }
+    h6{
+      color: $yellow;
+    }
+  }
+  #products, #showAnimalsPlants{
+    .addMoreCenterItems{
+      h6{
+        color: $pink;
+      }
+    }
+    .hrAddMore{
+      width: 100%;
+      color: $pink;
+      height: 3px;
+    }
+  }
+  .aboutusContainer{
+    h1{
+      color: $yellow;
+    }
+    p{
+      color: $pink;
+    }
+  }
+  .contactContainer{
+    aside{
+      border: 2px solid $pink;
+      border-radius: 20px;
+      padding: 10px;
+      h3, h6{
+        color: $yellow;
+        margin-top: 10px;
+      }
+      p{
+        color: $pink;
+        margin-right: 20px;
+        margin-left: 20px; 
+      }
+      label{
+        color: $pink;
+      }
+      button{
+        width: 50%;
+        height: 30px;
+        text-align: center;
+        background-color: $claret;
+        color: $aquamarine;
+        border: 2px solid $aquamarine;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+      .nameInput{
+        width: 100%;
+      }
+    }
+  }
+  .eventContainer{
+    h3 a{
+      color: $yellow;
+      text-decoration: none;
+    }
+    h3 a:hover{
+      cursor: pointer;
+    }
+    p{
+      color: $pink;
+    }
+  }
+  .ticketHeader{
+    h1{
+      color: $yellow;
+    }
+  }
+  .institutionsMain{
+    h1{
+      color: $yellow;
+    }
+    #intitutionsContainer{
+      h2, h3, h4, h5, h6{
+        color: $pink;
+      }
+    }
+    hr{
+      color: $aquamarine;
+    }
+  }
+}
+
+/*---------------- End of body styling ------------------*/
+
+/*---------------- Styling of the footer -------------------*/
+.footer{
+  .footerSeparator{
+    color: $aquamarine;
+    height: 3px;
+  }
+  .footer-links{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .col-md-4{
+      border-left: 3px dotted $aquamarine;
+    }
+  }
+  .footer-rights{
+    background-color: $claret;
+    small{
+      color: $yellow;
+      font-size: 18px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+  }
+  .listHeadings{
+    font-size: 16px;
+    font-weight: bold;
+    color: $yellow;
+  }
+  .list-item a{
+    text-decoration: none;
+    list-style-type: none;
+    color: $aquamarine;
+    transition: all 0.3s linear;
+  }
+  .list-item a:hover{
+    font-size: 16px;
+    color: $pink;
+  }
+  blockquote{
+    font-size: 20px;
+    font-weight: bolder;
+    color: $claret;
+    position: relative;
+    top: -110px;
+    text-align: center;
+  }
+  .footer-links img{
+    margin: auto;
+  }
+}
+
+/*------------------- End of Footer styling ---------------------*/

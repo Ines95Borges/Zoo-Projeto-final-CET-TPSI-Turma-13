@@ -1,10 +1,14 @@
 console.log("Script is being loaded!");
 
 // Cart development
-const cartOverlay = document.querySelector(".cart-overlay");
-const cart = document.querySelector(".cart");
+
+var cartOverlay = document.querySelector(".cart-overlay");
+var cart = document.querySelector(".cart");
 var cartTotal = document.querySelector('.cart-total');
-const cartContent = document.querySelector(".cart-content");
+var cartContent = document.querySelector(".cart-content");
+var cartItems = document.querySelector(".cart-items");
+var cartItemsNumber = "1";
+
 
 $(document).ready(() => {
   // Show the cart overlay when clicking in the cart button in the navbar
@@ -18,6 +22,9 @@ $(document).ready(() => {
     cart.classList.remove('showCart');
   });
   $('.itemBtn').on('click', (e) => {
+    setInterval(() => {
+      $('.cart-items').text(cartItemsNumber);
+    }, 100);
     let storage = new Storage();
     var productDetails = storage.getDetailsProduct(e);
     // Display products
@@ -78,16 +85,24 @@ class UI{
         <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
       </svg>
     </div>`;
+    var cartItemsNumberInt = parseInt(cartItems.innerHTML, 10)+1; // Adds 1 to cart items number count
+    cartItemsNumber = String(cartItemsNumberInt); // Converts the integer to a string so that the text can be modified
     cartContent.appendChild(div);
   }
 
   removeCartItem(event){
     var parentDiv = event.target.parentElement;
     var cartParent = parentDiv.parentElement;
+    // Counts the number of items selected
+    var itemsCount = parseInt(cartParent.childNodes[4].outerText, 10);
+    var cartItemsNumberInt = parseInt(cartItems.innerHTML, 10)-itemsCount; // Subtracts all the count of the items to cart items number count
+    cartItemsNumber = String(cartItemsNumberInt); // Converts the integer to a string so that the text can be modified
     cartParent.remove();
   }
 
   raiseAmount(event){
+    var cartItemsNumberInt = parseInt(cartItems.innerHTML, 10)+1; // Adds 1 to cart items number count
+    cartItemsNumber = String(cartItemsNumberInt); // Converts the integer to a string so that the text can be modified
     var parentDiv = event.target.parentElement.parentElement;
     var amountString = $(parentDiv).children("p").text();
     var amount = parseInt(amountString,10);
@@ -98,6 +113,8 @@ class UI{
   }
 
   decreaseAmount(event){
+    var cartItemsNumberInt = parseInt(cartItems.innerHTML, 10)-1; // Subtracts 1 to cart items number count
+    cartItemsNumber = String(cartItemsNumberInt); // Converts the integer to a string so that the text can be modified
     var parentDiv = event.target.parentElement.parentElement;
     var amountString = $(parentDiv).children("p").text();
     var amount = parseInt(amountString,10);
@@ -109,12 +126,16 @@ class UI{
 
   updatePrice(){
     var arrayCartItem = document.querySelectorAll('.cart-item');
+    console.log(arrayCartItem);
     var finalPrice = 0;
     arrayCartItem.forEach((cartItem) => {
       var cartItemChildNodes = cartItem.childNodes;
+      console.log(cartItemChildNodes);
       var price = parseFloat(cartItemChildNodes[2].childNodes[3].outerText);
+      console.log(price);
       var amount = parseInt(cartItemChildNodes[4].childNodes[3].outerText);
-      finalPrice += price*amount;
+      console.log(amount);
+      finalPrice += (price*amount).toFixed(2);
     });
     cartTotal.innerHTML = finalPrice.toString();
   }

@@ -1,3 +1,12 @@
+*{
+  box-sizing: border-box;
+}
+//Variables
+$green: #1C4A21;
+$claret: #750D37;
+$yellow: #FCE709;
+$pink: #FFCAD4;
+
 body{
   background-image: url(../img/backoffice/backoffice-background.jpg);
 }
@@ -22,13 +31,14 @@ header{
   height: 10vw;
   font-size: 2vw;
   border-radius: 15px;
-  box-shadow: 10px 10px 10px 10px gray;
-  background-color: rgb(47, 121, 47);
+  box-shadow: 10px 10px 10px 10px $pink;
+  background-color: $green;
+  color: $yellow;
   transition: all 0.5s;
   margin-bottom: 3vw;
 }
 .changeButton:hover{
-  background-color: rgba(134, 25, 25, 0.808);
+  background-color: $claret;
   border-radius: 30px;
 }
 
@@ -43,6 +53,6 @@ header{
     width: 100%;
     margin-bottom: 10vh;
     font-size: 4vw;
-    box-shadow: 5px 5px 5px 5px gray;
+    box-shadow: 5px 5px 5px 5px $pink;
   }
 }

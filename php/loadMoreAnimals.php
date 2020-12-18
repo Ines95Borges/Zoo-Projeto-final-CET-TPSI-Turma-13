@@ -20,7 +20,7 @@ while($fetch = mysqli_fetch_assoc($query)){
 
 $output .= "
   <div class=\"addMoreContainer\">
-    <hr>
+    <hr class=\"hrAddMore\">
     <div class=\"addMoreCenterItems\">
       <div class=\"addMoreButton\" data-id=$id>
         +

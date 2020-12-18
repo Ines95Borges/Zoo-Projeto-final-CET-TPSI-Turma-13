@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto</title>
+  <link rel="icon" type="image/png" href="./img/favicon.png"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css" defer>
@@ -32,7 +33,7 @@
 
   <main>
 
-    <div class="container mt-5">
+    <div class="container mt-5 contactContainer">
       <div class="row-col d-flex justify-content-around">
         <aside>
           <h3>Contacto</h3>
@@ -50,7 +51,7 @@
           <form action="" method="post">
             <div class="form-group">
               <label for="" class="d-block">Nome</label>
-              <input type="text" name="name" id="name">
+              <input class="nameInput" type="text" name="name" id="name">
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Endereço de e-mail</label>
@@ -70,6 +71,7 @@
               <label for="exampleFormControlTextarea1">Mensagem</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Digite o motivo pelo qual nos contactou."></textarea>
             </div>
+            <button type="submit">Enviar</button>
           </form>
         </aside>
       </div>

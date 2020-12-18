@@ -47,7 +47,7 @@
             </div>
           </div>
         </div>
-      <div class="text-center">
+      <div class="text-center indexHeading">
           <div class="ml-5">
             <h1>Bem-vindo ao Zoo Fantastic Beasts And Where To Find Them</h1>
           </div>
