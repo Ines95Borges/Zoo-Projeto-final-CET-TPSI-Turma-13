@@ -28,10 +28,10 @@
   <main>
 
     <div class="container aboutusContainer">
-      <h1>Sobre nós</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sit dolor vel tempore quisquam consectetur neque labore reprehenderit beatae? Aliquid consectetur, assumenda modi saepe praesentium sit molestiae vel odio quod.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque provident ducimus dolorum dolor facere nobis ut soluta laborum expedita distinctio, eligendi repellat perspiciatis quas dignissimos autem esse totam aperiam magni!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis tempore laboriosam veritatis beatae architecto facilis, suscipit voluptate eligendi tempora sequi illum alias placeat quia, autem delectus blanditiis praesentium, fugiat soluta?</p>
+      <h1 tabindex="0">Sobre nós</h1>
+      <p  tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sit dolor vel tempore quisquam consectetur neque labore reprehenderit beatae? Aliquid consectetur, assumenda modi saepe praesentium sit molestiae vel odio quod.</p>
+      <p tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque provident ducimus dolorum dolor facere nobis ut soluta laborum expedita distinctio, eligendi repellat perspiciatis quas dignissimos autem esse totam aperiam magni!</p>
+      <p tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis tempore laboriosam veritatis beatae architecto facilis, suscipit voluptate eligendi tempora sequi illum alias placeat quia, autem delectus blanditiis praesentium, fugiat soluta?</p>
     </div>
 
     <?php require './shoppingCartSidebar.php'; ?>

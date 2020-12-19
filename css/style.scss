@@ -21,6 +21,29 @@ $fontSize: 14px;
   }
 }
 
+// Classes that should not be visible to human eyes
+.visually-hidden, #pw-alert{
+  display: none;
+  visibility: hidden;
+}
+
+// Styling the skip to content anchor
+.skip-to-content{
+  clip: rect(1px,1px,1px,1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.skip-to-content:focus{
+  clip:auto;
+  height: auto;
+  width: auto;
+  position: absolute;
+  overflow: auto;
+}
+
 // Styling the index cards
 .index-cards{
   margin-top: auto;
@@ -276,7 +299,8 @@ body{
     }
   }
   .contactContainer{
-    aside{
+    margin-bottom: 20px;
+    section{
       border: 2px solid $pink;
       border-radius: 20px;
       padding: 10px;

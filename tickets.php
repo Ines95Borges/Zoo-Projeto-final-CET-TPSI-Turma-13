@@ -16,6 +16,8 @@
   <script src="./js/cartScript.js" defer></script>
 </head>
 <body>
+
+  <a href="#main" class="skip-to-content">Saltar para conteúdo</a>
   
   <?php require 'navbar.php'; ?>
 
@@ -28,22 +30,22 @@
 
   <header class="mb-5 mt-5 ticketHeader">
     <div class="row text-center">
-      <h1>Comprar tickets</h1>
+      <h1 tabindex="0">Comprar tickets</h1>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <div class="container mb-5">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col ticket-card">
           <div class="card h-100 ticket-card">
             <img src="./img/tickets/ticket-single.jpg" class="card-img-top" alt="Single ticket">
             <div class="card-body ticket-card">
-              <h5 class="card-title ticket-card">Ticket único</h5>
-              <p class="card-text ticket-card">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti aut dolorum laboriosam! Eveniet voluptatem quo nostrum, quaerat assumenda repellat earum? Similique soluta maxime, repudiandae quos magnam facere quam placeat perspiciatis.</p>
+              <h5 class="card-title ticket-card" tabindex="0">Ticket único</h5>
+              <p class="card-text ticket-card" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti aut dolorum laboriosam! Eveniet voluptatem quo nostrum, quaerat assumenda repellat earum? Similique soluta maxime, repudiandae quos magnam facere quam placeat perspiciatis.</p>
             </div>
             <div class="card-footer text-center">
-              <small class="text-muted">Clique para comprar</small>
+              <small class="text-muted" tabindex="0">Clique para comprar</small>
             </div>
           </div>
         </div>
@@ -51,11 +53,11 @@
           <div class="card h-100 ticket-card">
             <img src="./img/tickets/ticket-double.jpg" class="card-img-top" alt="Double ticket">
             <div class="card-body">
-              <h5 class="card-title">Ticket duplo</h5>
-              <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur maxime, minima adipisci accusamus exercitationem aut molestiae accusantium rerum voluptatem, ullam atque possimus expedita ipsum sint, corporis odit voluptas voluptates?</p>
+              <h5 class="card-title" tabindex="0">Ticket duplo</h5>
+              <p class="card-text" tabindex="0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore consequatur maxime, minima adipisci accusamus exercitationem aut molestiae accusantium rerum voluptatem, ullam atque possimus expedita ipsum sint, corporis odit voluptas voluptates?</p>
             </div>
             <div class="card-footer text-center">
-              <small class="text-muted">Clique para comprar</small>
+              <small class="text-muted" tabindex="0">Clique para comprar</small>
             </div>
           </div>
         </div>
@@ -63,11 +65,11 @@
           <div class="card h-100 ticket-card">
             <img src="./img/tickets/ticket-family.jpg" class="card-img-top" alt="Family ticket">
             <div class="card-body">
-              <h5 class="card-title">Ticket família</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit incidunt voluptatem ab natus eos consectetur corporis, asperiores dicta iure assumenda praesentium dolor culpa quidem modi temporibus sed iusto harum numquam?</p>
+              <h5 class="card-title" tabindex="0">Ticket família</h5>
+              <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit incidunt voluptatem ab natus eos consectetur corporis, asperiores dicta iure assumenda praesentium dolor culpa quidem modi temporibus sed iusto harum numquam?</p>
             </div>
             <div class="card-footer text-center">
-              <small class="text-muted">Clique para comprar</small>
+              <small class="text-muted" tabindex="0">Clique para comprar</small>
             </div>
           </div>
         </div>

@@ -21,6 +21,8 @@
   </style>
 </head>
 <body>
+
+  <a href="#main" class="skip-to-content">Saltar para conteúdo</a>
   
   <?php require './navbar.php'; ?>
   
@@ -31,35 +33,35 @@
     </ol>
   </nav>
 
-  <main>
+  <main id="main">
 
     <div class="container mt-5 contactContainer">
       <div class="row-col d-flex justify-content-around">
-        <aside>
-          <h3>Contacto</h3>
-          <h6>Telefone</h6>
-          <p>918273645</p>
-          <h6>Endereço de e-mail</h6>
-          <p>fbawtft@zoo.pt</p>
-          <h6>Morada</h6>
-          <p>Av. GrandesBestas nº 7689</p>
-          <h6>Código-postal</h6>
-          <p>1000-100 Zoolândia</p>
-        </aside>
+        <section>
+          <h3 tabindex="0">Contacto</h3>
+          <h6 tabindex="0">Telefone</h6>
+          <p tabindex="0">918273645</p>
+          <h6 tabindex="0">Endereço de e-mail</h6>
+          <p tabindex="0">fbawtft@zoo.pt</p>
+          <h6 tabindex="0">Morada</h6>
+          <p tabindex="0">Av. GrandesBestas nº 7689</p>
+          <h6 tabindex="0">Código-postal</h6>
+          <p tabindex="0">1000-100 Zoolândia</p>
+        </section>
 
-        <aside class="col-6">
+        <section class="col-6">
           <form action="" method="post">
             <div class="form-group">
-              <label for="" class="d-block">Nome</label>
+              <label for="name" class="d-block">Nome</label>
               <input class="nameInput" type="text" name="name" id="name">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlInput1">Endereço de e-mail</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <label for="email">Endereço de e-mail</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com">
             </div>
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Selecione o motivo</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <label for="questionselection">Selecione o motivo</label>
+              <select class="form-control" id="questionselection">
                 <option>Compra tickets</option>
                 <option>Pergunta sobre animais</option>
                 <option>Pergunta sobre plantas</option>
@@ -68,12 +70,12 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Mensagem</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Digite o motivo pelo qual nos contactou."></textarea>
+              <label for="message">Mensagem</label>
+              <textarea class="form-control" id="message" rows="3" placeholder="Digite o motivo pelo qual nos contactou."></textarea>
             </div>
             <button type="submit">Enviar</button>
           </form>
-        </aside>
+        </section>
       </div>
     </div>
 

@@ -1,8 +1,3 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 #loggedInDropdown {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -17,6 +12,28 @@
   height: auto;
   overflow: hidden;
   border-radius: 50%;
+}
+
+.visually-hidden, #pw-alert {
+  display: none;
+  visibility: hidden;
+}
+
+.skip-to-content {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.skip-to-content:focus {
+  clip: auto;
+  height: auto;
+  width: auto;
+  position: absolute;
+  overflow: auto;
 }
 
 .index-cards {
@@ -282,6 +299,7 @@
 }
 
 .topNavbar .cart-btn .cart-items {
+  position: relative;
   border: 2px solid #1C4A21;
   background-color: #75FFCD;
   color: #1C4A21;
@@ -344,28 +362,32 @@ body .aboutusContainer p {
   color: #FFCAD4;
 }
 
-body .contactContainer aside {
+body .contactContainer {
+  margin-bottom: 20px;
+}
+
+body .contactContainer section {
   border: 2px solid #FFCAD4;
   border-radius: 20px;
   padding: 10px;
 }
 
-body .contactContainer aside h3, body .contactContainer aside h6 {
+body .contactContainer section h3, body .contactContainer section h6 {
   color: #FCE709;
   margin-top: 10px;
 }
 
-body .contactContainer aside p {
+body .contactContainer section p {
   color: #FFCAD4;
   margin-right: 20px;
   margin-left: 20px;
 }
 
-body .contactContainer aside label {
+body .contactContainer section label {
   color: #FFCAD4;
 }
 
-body .contactContainer aside button {
+body .contactContainer section button {
   width: 50%;
   height: 30px;
   text-align: center;
@@ -376,7 +398,7 @@ body .contactContainer aside button {
   margin-top: 10px;
 }
 
-body .contactContainer aside .nameInput {
+body .contactContainer section .nameInput {
   width: 100%;
 }
 

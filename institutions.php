@@ -15,19 +15,21 @@
   <script src="./js/cartScript.js" defer></script>
 </head>
 <body>
+
+<a href="#main" class="skip-to-content">Saltar para conteúdo</a>
   
 <?php require 'navbar.php'; ?>
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
+    <li class="breadcrumb-item"><a href="./index.php" aria-label="Home">Home</a></li>
     <li class="breadcrumb-item active" aria-current="page">Instituições</li>
   </ol>
 </nav>
 
-<main class="institutionsMain">
+<main class="institutionsMain" id="main">
 
-  <h1 class="mt-3 text-center">Instituições</h1>
+  <h1 class="mt-3 text-center" tabindex="0">Instituições</h1>
 
   <div class="container mt-5 mb-3" id="intitutionsContainer">
 
@@ -39,11 +41,11 @@
       while($fetch = mysqli_fetch_assoc($query)){ ?>
         
         <div class="row mb-2">
-          <h2><?php echo $fetch['Name'] ?></h2>
-          <h3><?php echo "Address: ".$fetch['Address'] ?></h3>
-          <h4><?php echo "City: ".$fetch['City'] ?></h4>
-          <h5><?php echo "State: ".$fetch['State'] ?></h5>
-          <h6><?php echo "Country: ".$fetch['Country'] ?></h6>
+          <h2 tabindex="0"><?php echo $fetch['Name'] ?></h2>
+          <h3 tabindex="0"><?php echo "Address: ".$fetch['Address'] ?></h3>
+          <h4 tabindex="0"><?php echo "City: ".$fetch['City'] ?></h4>
+          <h5 tabindex="0"><?php echo "State: ".$fetch['State'] ?></h5>
+          <h6 tabindex="0"><?php echo "Country: ".$fetch['Country'] ?></h6>
         </div>
         <hr class="mb-2">
 

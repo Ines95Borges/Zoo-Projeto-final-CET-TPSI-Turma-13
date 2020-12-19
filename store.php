@@ -16,39 +16,41 @@
 </head>
 <body>
 
+  <a href="#main" class="skip-to-content">Saltar para conteúdo</a>
+
   <?php require 'navbar.php'; ?>
 
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Loja</li>
+      <li class="breadcrumb-item"><a href="./index.php" aria-label="home">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page" aria-label="loja">Loja</li>
     </ol>
   </nav>
   
-  <main>
+  <main id="main">
     <div class="row-col d-md-flex mt-5">
       <ul class="nav flex-column sidebar">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php" aria-label="home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Tickets</a>
+          <a class="nav-link" href="./tickets.php" aria-label="comprar tickets">Tickets</a>
         </li>
         <hr class="mx-3">
         <li class="nav-item">
-          <h6 class="ml-3">Presentes</h6>
+          <h6 class="ml-3" tabindex="0">Presentes</h6>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Animais terrestres</a>
+          <a class="nav-link" href="#" aria-label="ver produtos animais terrestres">Animais terrestres</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Plantas</a>
+          <a class="nav-link" href="#" aria-label="ver produtos plantas">Plantas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Animais marinhos</a>
+          <a class="nav-link" href="#" aria-label="ver produtos animais marinhos">Animais marinhos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Animais voadores</a>
+          <a class="nav-link" href="#" aria-label="ver produtos animais voadores">Animais voadores</a>
         </li>
       </ul>
 
@@ -67,8 +69,8 @@
           <div class="card" data-id=<?php echo (string)$counter; ?> style="width: 18rem; margin-bottom: 20px;">
             <img class="card-img-top" src="<?php echo $fetch['Link']; ?>" alt="<?php echo $fetch['NameProduct']; ?>">
             <div class="card-body">
-              <h5 class="card-title"><?php echo $fetch['NameProduct']; ?></h5>
-              <a class="btn btn-primary itemBtn" id="<?php echo $counter++; ?>">Comprar por <?php echo $fetch['Price']; ?>€</a>
+              <h5 class="card-title" tabindex="0"><?php echo $fetch['NameProduct']; ?></h5>
+              <a class="btn btn-primary itemBtn" id="<?php echo $counter++; ?>" tabindex="0">Comprar por <?php echo $fetch['Price']; ?>€</a>
             </div>
           </div>
 
@@ -82,10 +84,10 @@
         <div class="addMoreContainer">
           <hr class="hrAddMore">
           <div class="addMoreCenterItems">
-            <div class="addMoreButtonStore" data-id=<?php echo $id; ?> >
+            <div class="addMoreButtonStore" data-id=<?php echo $id; ?> tabindex="0">
               +
             </div>
-            <h6>Show more 6</h6>
+            <h6>Mostrar mais 6</h6>
           </div>
         </div>
 

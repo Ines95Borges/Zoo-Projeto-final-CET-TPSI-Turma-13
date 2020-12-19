@@ -15,6 +15,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
+  <script src="./js/wai-aria.js" defer></script>
 
 </head>
 <body>
@@ -49,7 +50,7 @@
         </div>
       <div class="text-center indexHeading">
           <div class="ml-5">
-            <h1>Bem-vindo ao Zoo Fantastic Beasts And Where To Find Them</h1>
+            <h1 tabindex="0">Bem-vindo ao Zoo Fantastic Beasts And Where To Find Them</h1>
           </div>
         </div>
       </div>
@@ -61,8 +62,8 @@
         <div class="card d-inline index-cards" style="width: 18rem; margin-right: 3%; margin-left: auto;">
           <img src="./img/indexCards/store.jpg" class="card-img-top" alt="Store">
           <div class="card-body">
-            <h5 class="card-title">Loja</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos ex, aperiam facilis dolorum quod, laborum error tempora, voluptas unde quaerat impedit repellat cum pariatur dolor quidem magnam. Vitae, voluptatibus reprehenderit!</p>
+            <h5 class="card-title" tabindex="0">Loja</h5>
+            <p class="card-text" tabindex="0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos ex, aperiam facilis dolorum quod, laborum error tempora, voluptas unde quaerat impedit repellat cum pariatur dolor quidem magnam. Vitae, voluptatibus reprehenderit!</p>
             <a href="./store.php" class="btn btn-primary">Ir para a loja</a>
           </div>
         </div>
@@ -70,8 +71,8 @@
         <div class="card d-inline index-cards" style="width: 18rem; margin-right: 3%;">
           <img src="./img/indexCards/zoo-tickets.jpg" class="card-img-top" alt="Zoo tickets">
           <div class="card-body">
-            <h5 class="card-title">Zoo tickets</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quam molestiae. Dolorum alias magni quae magnam perspiciatis provident eligendi nostrum. Saepe odit molestias veritatis quaerat eius perferendis debitis modi sed.</p>
+            <h5 class="card-title" tabindex="0">Zoo tickets</h5>
+            <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quam molestiae. Dolorum alias magni quae magnam perspiciatis provident eligendi nostrum. Saepe odit molestias veritatis quaerat eius perferendis debitis modi sed.</p>
             <a href="./tickets.php" class="btn btn-primary">Comprar tickets</a>
           </div>
         </div>
@@ -79,8 +80,8 @@
         <div class="card index-cards" style="width: 18rem;">
           <img src="./img/indexCards/zoo-events.jpg" class="card-img-top" alt="Zoo Events">
           <div class="card-body">
-            <h5 class="card-title">Zoo events</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores repellat exercitationem earum pariatur. Neque ipsa eius ex animi, consectetur ipsam! Aut, accusamus laborum veniam veritatis eligendi vel. Assumenda, repellat velit.</p>
+            <h5 class="card-title" tabindex="0">Zoo events</h5>
+            <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores repellat exercitationem earum pariatur. Neque ipsa eius ex animi, consectetur ipsam! Aut, accusamus laborum veniam veritatis eligendi vel. Assumenda, repellat velit.</p>
             <a href="./events.php" class="btn btn-primary">Ir para eventos</a>
           </div>
         </div>
@@ -91,8 +92,8 @@
         <div class="card index-cards" style="width: 18rem; margin-right: 3%;">
           <img src="./img/indexCards/zoo-animals.jpg" class="card-img-top" alt="Zoo animals">
           <div class="card-body">
-            <h5 class="card-title">Animais do Zoo</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid deleniti obcaecati? Obcaecati dolores odit ea! Impedit asperiores molestias unde labore sint dolore mollitia rerum, culpa eius ut saepe laboriosam?</p>
+            <h5 class="card-title" tabindex="0">Animais do Zoo</h5>
+            <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquid deleniti obcaecati? Obcaecati dolores odit ea! Impedit asperiores molestias unde labore sint dolore mollitia rerum, culpa eius ut saepe laboriosam?</p>
             <a href="./checkAnimals.php" class="btn btn-primary">Ver animais</a>
           </div>
         </div>
@@ -100,8 +101,8 @@
         <div class="card index-cards" style="width: 18rem; margin-right: 3%;">
           <img src="./img/indexCards/zoo-plants.jpg" class="card-img-top" alt="Zoo plants">
           <div class="card-body">
-            <h5 class="card-title">Plantas do Zoo</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita quod asperiores iure, cupiditate magni fuga, quibusdam alias rem fugit omnis iste voluptatibus reprehenderit maxime quis voluptas pariatur inventore nulla? Officiis?</p>
+            <h5 class="card-title" tabindex="0">Plantas do Zoo</h5>
+            <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita quod asperiores iure, cupiditate magni fuga, quibusdam alias rem fugit omnis iste voluptatibus reprehenderit maxime quis voluptas pariatur inventore nulla? Officiis?</p>
             <a href="./checkPlants.php" class="btn btn-primary">Ver plantas</a>
           </div>
         </div>
@@ -109,8 +110,8 @@
         <div class="card index-cards" style="width: 18rem;">
           <img src="./img/indexCards/zoo-institution.jpg" class="card-img-top" alt="Zoo institutions">
           <div class="card-body">
-            <h5 class="card-title">Instituições</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique architecto, aperiam aut eos quas nostrum qui voluptates accusantium exercitationem cum doloremque ducimus omnis saepe velit alias, voluptate consequuntur incidunt a!</p>
+            <h5 class="card-title" tabindex="0">Instituições</h5>
+            <p class="card-text" tabindex="0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique architecto, aperiam aut eos quas nostrum qui voluptates accusantium exercitationem cum doloremque ducimus omnis saepe velit alias, voluptate consequuntur incidunt a!</p>
             <a href="./institutions.php" class="btn btn-primary">Ver instituições</a>
           </div>
         </div>

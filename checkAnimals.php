@@ -16,6 +16,8 @@
   <script src="./js/addMoreButtonAnimals.js" defer></script>
 </head>
 <body>
+
+  <a href="#main" class="skip-to-content">Saltar para conteúdo</a>
   
   <?php require './navbar.php'; ?>
 
@@ -26,7 +28,7 @@
     </ol>
   </nav>
 
-  <main>
+  <main id="main">
     <div class="row-col d-md-flex mt-5">
       <ul class="nav flex-column sidebar">
         <li class="nav-item">
@@ -67,7 +69,7 @@
           <div class="card" style="width: 18rem; margin-bottom:20px;">
             <img class="card-img-top" src="<?php echo $fetch['FotoLink']; ?>" alt="<?php echo $fetch['Name']; ?>">
             <div class="card-body" style="display: flex; align-items: flex-end; justify-content: space-between;">
-              <h5 class="card-title"><?php echo $fetch['Name']; ?></h5>
+              <h5 class="card-title" tabindex="0"><?php echo $fetch['Name']; ?></h5>
               <a class="btn btn-primary itemBtn">Detalhes</a>
             </div>
           </div>
@@ -77,10 +79,10 @@
         <div class="addMoreContainer">
           <hr class="hrAddMore">
           <div class="addMoreCenterItems">
-            <div class="addMoreButton" data-id=<?php echo $id; ?> >
+            <div class="addMoreButton" data-id=<?php echo $id; ?>  tabindex="0">
               +
             </div>
-            <h6>Show more 6</h6>
+            <h6>Mostrar mais 6</h6>
           </div>
         </div>
         
