@@ -25,10 +25,10 @@ $(document).ready(() => {
     setInterval(() => {
       $('.cart-items').text(cartItemsNumber);
     }, 100);
-    let storage = new Storage();
+    let storage = new StorageVar();
     var productDetails = storage.getDetailsProduct(e);
     // Display products
-    let ui = new UI();
+    let ui = new Ui();
     ui.addCartItem(productDetails[0], productDetails[1], productDetails[2], productDetails[3]);
     ui.updatePrice();
     // Remove item from list
@@ -51,7 +51,7 @@ $(document).ready(() => {
   });
 });
 
-class Storage{
+var StorageVar = class Storage{
   getDetailsProduct(event){
     // Get the details of the product 
     var id = event.target.id;
@@ -65,7 +65,7 @@ class Storage{
   }
 }
 
-class UI{
+var Ui = class UI{
   addCartItem(srcImage, titleProduct, priceProduct, id){
     const cartContent = document.querySelector(".cart-content");
     const div = document.createElement('div');
@@ -131,9 +131,9 @@ class UI{
     arrayCartItem.forEach((cartItem) => {
       var cartItemChildNodes = cartItem.childNodes;
       console.log(cartItemChildNodes);
-      var price = parseFloat(cartItemChildNodes[2].childNodes[3].outerText);
+      var price = parseFloat(cartItemChildNodes[2].childNodes[3].innerHTML.replace("€", ""));
       console.log(price);
-      var amount = parseInt(cartItemChildNodes[4].childNodes[3].outerText);
+      var amount = parseInt(cartItemChildNodes[4].childNodes[3].innerHTML);
       console.log(amount);
       finalPrice += (price*amount).toFixed(2);
     });

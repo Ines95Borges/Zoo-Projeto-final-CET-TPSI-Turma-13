@@ -44,6 +44,7 @@
         <?php }} ?>
       </ul>
 
+      <!-- If the user is logged in -->
       <?php if(!isset($_SESSION['Client_ID'])){ ?>
       <form class="d-flex ">
         <button class="btn btn-outline-success mr-3 ml-3" type="button" data-toggle="modal" data-target="#logIn">Entrar</button>
