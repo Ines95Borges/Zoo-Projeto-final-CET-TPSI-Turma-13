@@ -7,6 +7,7 @@ $pink: #FFCAD4;
 $claret: #750D37;
 $yellow: #FCE709;
 $fontSize: 14px;
+$fontSizeNavbar: 20px;
 
 // Styling the dropdown image when the user is logged in
 #loggedInDropdown{
@@ -79,7 +80,7 @@ $fontSize: 14px;
   height: 100%;
   transition: width 2s;
   background: rgba(172, 171, 170, 0.5);
-  z-index: 1;
+  z-index: 9998;
   visibility: hidden;
 }
 .cart {
@@ -89,7 +90,7 @@ $fontSize: 14px;
   width: 100%;
   height: 100%;
   overflow: scroll;
-  z-index: 2;
+  z-index: 9999;
   background: rgb(231, 226, 221);
   padding: 1.5rem;
   transition: width 2s;
@@ -193,6 +194,19 @@ $fontSize: 14px;
       font-size: 20px;
       text-align: center;
       border-radius: 50%;
+      transition: all 0.3s linear;
+    }
+    .addMoreButton:hover{
+      cursor: pointer;
+      font-size: 26px;
+      font-weight: bolder;
+      color: $green;
+    }
+    .addMoreButtonStore:hover{
+      cursor: pointer;
+      font-size: 26px;
+      font-weight: bolder;
+      color: $green;
     }
     .addMoreButtonStore{
       margin-right: 10px;
@@ -206,6 +220,7 @@ $fontSize: 14px;
       font-size: 20px;
       text-align: center;
       border-radius: 50%;
+      transition: all 0.3s linear;
     }
   }
 }
@@ -214,17 +229,25 @@ $fontSize: 14px;
 
 /*---------------- Navbar styling ------------------*/
 .topNavbar{
-  position: sticky;
+  position: fixed;
   border-bottom: 3px solid $aquamarine;
+  z-index:189;
+  height: 100px;
+  width: 100%;
+  display: block;
+  background-color: $claret;
+  opacity: 0.7;
+  top: 0;
   .navbar-brand img, svg{
     border-radius: 10px;
   }
   .navbar-nav .nav-link{
-    font-size: $fontSize;
+    font-size: $fontSizeNavbar;
     color: $yellow;
+    transition: all 0.4s linear;
   }
   .navbar-nav .nav-link:hover{
-    font-size: 16px;
+    font-size: 26px;
   }
   .btn-outline-success{
     border-color: $aquamarine;
@@ -239,7 +262,7 @@ $fontSize: 14px;
   .cart-btn{
     background-color: $yellow;
     .cart-items{
-      position:relative;
+      position:absolute;
       border: 2px solid $green;
       background-color: $aquamarine;
       color: $green;
@@ -247,9 +270,22 @@ $fontSize: 14px;
       right: 25px;
     }
   }
-  .navbarDropdown{
-    background-color: $aquamarine;
+  .dropdown .dropdown-menu{
+    background-color: $pink;
   }
+  .dropdown .dropdown-menu hr{
+    color: $green;
+    height: 3px;
+  }
+  .dropdown .dropdown-menu a{
+    background-color: $claret;
+    color: $aquamarine;
+    transition: all 0.3s linear;
+  }
+  .dropdown .dropdown-menu a:hover{
+    font-weight: bolder;
+  }
+  
 }
 
 /*---------------- End of Navbar styling ------------------*/
@@ -258,6 +294,15 @@ $fontSize: 14px;
 body{
   background-color:$green;
   font-size: $fontSize;
+  main{
+    position: relative;
+    top: 100px;
+    margin-bottom: 150px;
+  }
+  .breadcrumbNav{
+    position: relative;
+    top: 100px;
+  }
   .indexHeading{
     color: $yellow;
     font-size: 30px;

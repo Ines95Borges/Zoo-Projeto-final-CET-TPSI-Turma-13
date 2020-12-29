@@ -75,7 +75,7 @@
   -webkit-transition: width 2s;
   transition: width 2s;
   background: rgba(172, 171, 170, 0.5);
-  z-index: 1;
+  z-index: 9998;
   visibility: hidden;
 }
 
@@ -86,7 +86,7 @@
   width: 100%;
   height: 100%;
   overflow: scroll;
-  z-index: 2;
+  z-index: 9999;
   background: #e7e2dd;
   padding: 1.5rem;
   -webkit-transition: width 2s;
@@ -238,6 +238,22 @@
   font-size: 20px;
   text-align: center;
   border-radius: 50%;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.addMoreContainer .addMoreCenterItems .addMoreButton:hover {
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: bolder;
+  color: #1C4A21;
+}
+
+.addMoreContainer .addMoreCenterItems .addMoreButtonStore:hover {
+  cursor: pointer;
+  font-size: 26px;
+  font-weight: bolder;
+  color: #1C4A21;
 }
 
 .addMoreContainer .addMoreCenterItems .addMoreButtonStore {
@@ -258,14 +274,22 @@
   font-size: 20px;
   text-align: center;
   border-radius: 50%;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 /*----------------End of Add More -----------------*/
 /*---------------- Navbar styling ------------------*/
 .topNavbar {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   border-bottom: 3px solid #75FFCD;
+  z-index: 189;
+  height: 100px;
+  width: 100%;
+  display: block;
+  background-color: #750D37;
+  opacity: 0.7;
+  top: 0;
 }
 
 .topNavbar .navbar-brand img, .topNavbar svg {
@@ -273,12 +297,14 @@
 }
 
 .topNavbar .navbar-nav .nav-link {
-  font-size: 14px;
+  font-size: 20px;
   color: #FCE709;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
 }
 
 .topNavbar .navbar-nav .nav-link:hover {
-  font-size: 16px;
+  font-size: 26px;
 }
 
 .topNavbar .btn-outline-success {
@@ -299,7 +325,7 @@
 }
 
 .topNavbar .cart-btn .cart-items {
-  position: relative;
+  position: absolute;
   border: 2px solid #1C4A21;
   background-color: #75FFCD;
   color: #1C4A21;
@@ -307,8 +333,24 @@
   right: 25px;
 }
 
-.topNavbar .navbarDropdown {
-  background-color: #75FFCD;
+.topNavbar .dropdown .dropdown-menu {
+  background-color: #FFCAD4;
+}
+
+.topNavbar .dropdown .dropdown-menu hr {
+  color: #1C4A21;
+  height: 3px;
+}
+
+.topNavbar .dropdown .dropdown-menu a {
+  background-color: #750D37;
+  color: #75FFCD;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.topNavbar .dropdown .dropdown-menu a:hover {
+  font-weight: bolder;
 }
 
 /*---------------- End of Navbar styling ------------------*/
@@ -316,6 +358,17 @@
 body {
   background-color: #1C4A21;
   font-size: 14px;
+}
+
+body main {
+  position: relative;
+  top: 100px;
+  margin-bottom: 150px;
+}
+
+body .breadcrumbNav {
+  position: relative;
+  top: 100px;
 }
 
 body .indexHeading {

@@ -41,21 +41,3 @@ function generatePassword(){
   $('input[name="pwd-repeat"]').val(generatedPassword.join(''));
 }
 
-
-// Code to prevent the lost of data when refreshing the page??? IT'S NOT WORKING
-var form = document.getElementsByClassName('formNavbar')[1];
-window.addEventListener("beforeunload", (event) => {
-  if (!hasChanges) return;
-
-  event.preventDefault();
-  event.returnValue = "";
-});
-
-form.addEventListener('change', () => {
-  hasChanges = true;
-  console.log("Change has been made");
-});
-
-form.addEventListener('submit', () => {
-  hasChanges = false;
-});

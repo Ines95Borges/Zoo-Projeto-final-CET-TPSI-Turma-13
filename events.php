@@ -20,7 +20,7 @@
 
   <?php require './navbar.php'; ?>
 
-  <nav aria-label="breadcrumb">
+  <nav aria-label="breadcrumb" class="breadcrumbNav">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="./index.php" aria-label="Home">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Eventos</li>

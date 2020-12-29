@@ -21,7 +21,7 @@
   
   <?php require './navbar.php'; ?>
 
-  <nav aria-label="breadcrumb">
+  <nav aria-label="breadcrumb" class="breadcrumbNav">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Ver plantas</li>
@@ -75,7 +75,7 @@
             <div class="addMoreButton" data-id=<?php echo $id; ?>  tabindex="0">
               +
             </div>
-            <h6>Mostrar mais 6</h6>
+            <h6>Mostrar mais 3</h6>
           </div>
         </div>
 

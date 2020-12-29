@@ -11,22 +11,23 @@ while($fetch = mysqli_fetch_assoc($query)){
   <div class=\"card\" style=\"width: 18rem; margin-bottom:20px;\">
     <img class=\"card-img-top\" src=\"{$fetch['FotoLink']}\" alt=\"{$fetch['PlantName']}\">
     <div class=\"card-body\" style=\"display: flex; align-items: flex-end; justify-content: space-between;\">
-      <h5 class=\"card-title\">{$fetch['PlantName']}</h5>
-      <a class=\"btn btn-primary itemBtn\">Detalhes</a>
+      <h5 class=\"card-title\" tabindex=\"0\">{$fetch['PlantName']}</h5>
+      <a class=\"btn btn-primary itemBtn\" tabindex=\"0\">Detalhes</a>
     </div>
-  </div>
-  $id = {$fetch['Plant_ID']} ";
+  </div>";
+  $id = $fetch['Plant_ID'];
 } 
 
 $output .= "
   <div class=\"addMoreContainer\">
     <hr class=\"hrAddMore\">
     <div class=\"addMoreCenterItems\">
-      <div class=\"addMoreButton\" data-id=$id>
+      <div class=\"addMoreButton\" data-id=$id tabindex=\"0\">
         +
       </div>
-      <h6>Show more 6</h6>
+      <h6>Mostrar mais 3</h6>
     </div>
   </div> ";
 
-echo $output;
+echo $output; ?>
+<script src="./js/addMoreButtonPlants.js" defer></script>

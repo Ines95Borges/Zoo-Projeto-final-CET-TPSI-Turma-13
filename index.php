@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="google-signin-client_id" content="132897864392-tr73on25bdq41e1gias2s7gn56j2d6rv.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="85445765798-dt47q70lkmf723l7smij02t3dbnifnua.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fantastic Beasts And Where To Find Them</title>
@@ -16,7 +16,6 @@
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
   <script src="./js/wai-aria.js" defer></script>
-
 </head>
 <body>
   

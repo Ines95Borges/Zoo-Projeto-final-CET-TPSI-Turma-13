@@ -26,7 +26,7 @@
   
   <?php require './navbar.php'; ?>
   
-  <nav aria-label="breadcrumb">
+  <nav aria-label="breadcrumb" class="breadcrumbNav">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Contacte-nos</li>
@@ -106,7 +106,7 @@
     </script>
 
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGOyb_87IOla4Qz3-PDj18qDfyYPoo3s&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAiJ-lNkIhJPQjKb9xYs2oqHZrwjUzQzY&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
 

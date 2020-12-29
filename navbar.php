@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php session_start(); 
+require './php/googleSignInConfig.php';
+?>
 <nav class="navbar navbar-expand-lg topNavbar navbar-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="./index.php"><img width=75vw src="./img/logo.jpg" alt="Logo Zoo direciona para home page"></a>
@@ -60,7 +62,7 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#" aria-label="perfil">Perfil</a></li>
             <li><a class="dropdown-item" href="#" aria-label="definições">Definições</a></li>
-            <li><a class="dropdown-item" href="./php/logOut.php" aria-label="sair">Sair</a></li>
+            <li><a class="dropdown-item" href="./php/logOut.php" aria-label="sair" onclick="signOut()">Sair</a></li>
           </ul>
         </li>
       <?php } ?>
@@ -92,15 +94,15 @@
               <fieldset>
                 <div class="m-2">
                   <div class="row mb-4">
-                    <label for="" class="d-flex justify-content-center">Nome de utilizador</label>
+                    <label for="usernameLogIn" class="d-flex justify-content-center">Nome de utilizador</label>
                     <input type="text" name="usernameLogin" id="usernameLogIn" autocomplete="username">
                   </div>
                   <div class="row">
-                    <label for="" class="d-flex justify-content-center">Palavra-passe</label>
+                    <label for="pwdLogIn" class="d-flex justify-content-center">Palavra-passe</label>
                     <input type="password" name="pwdLogin" id="pwdLogIn" class="col-11 pwd" autocomplete="current-password">
                     <button type="button" onclick="showPwd()" onmouseout="hidePwd()" class="col-1"><span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span></button>
                   </div>
-                  <div class="g-signin2 mt-3 d-flex justify-content-center"></div>
+                  <div class="g-signin2 d-flex justify-content-center mt-5" data-onsuccess="onSignIn" data-width="300" data-height="50" onclick="window.location = '<?php echo $login_url; ?>'"></div>
                 </div>
               </fieldset>
 
@@ -188,7 +190,7 @@
               </div>
             </div>
 
-            <div class="g-signin2 mt-3 d-flex justify-content-center"></div>
+            <div class="g-signin2 d-flex justify-content-center mt-5" data-onsuccess="onSignIn" data-width="300" data-height="50" onclick="window.location = '<?php echo $login_url; ?>'"></div>
           
           </div>
           <div class="modal-footer">
@@ -199,3 +201,26 @@
       </div>
     </div>
   </div>
+
+<!-- Sign in-->
+<script>
+function onSignIn(googleUser) {
+    var idToken = googleUser.getAuthResponse().id_token;
+
+    // Validate token
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'http://lvh.me/sign_in_with_google/login.php');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function(e) {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                window.location = "private.php";
+            }
+            else {
+                alert("Error: " + xhr.statusText);
+            }
+        }
+    }
+    xhr.send('idtoken=' + idToken + "&method=google");
+}
+</script>
