@@ -1,5 +1,5 @@
 <?php session_start(); 
-require './php/googleSignInConfig.php';
+require './php/googleSignInAPI/googleSignInConfig.php';
 ?>
 <nav class="navbar navbar-expand-lg topNavbar navbar-dark">
   <div class="container-fluid">
@@ -52,17 +52,23 @@ require './php/googleSignInConfig.php';
         <button class="btn btn-outline-success mr-3 ml-3" type="button" data-toggle="modal" data-target="#logIn">Entrar</button>
         <button class="btn btn-outline-success mr-5" type="button" data-toggle="modal" data-target="#signUp">Registar-se</button>
       </form>
-      <?php } if(isset($_SESSION['Client_ID'])) {?>
+      <?php } if(isset($_SESSION['Client_ID'])  || isset($_COOKIE["id"])) {?>
         <li class="nav-item dropdown" id="loggedInDropdown">
-          <img src="./img/login-icon.png" alt="Login Icon" id="loginIcon" role="button" data-toggle="dropdown">
+          <img src="./img/login-icon.png" alt="User Icon" id="loginIcon" role="button" data-toggle="dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false" aria-label="login dropdown">
           </a>
           <ul class="dropdown-menu" id="dropdownLoggedIn" aria-labelledby="navbarDropdown">
-            <li><span id="nameLoginDropdown">Está logado como </span></li>
+            <li><span id="nameLoginDropdown">Está logado como <?php 
+            if(isset($_COOKIE["id"])){
+              echo $userData['givenName']." ".$userData['familyName'];
+            }else{
+              echo $_SESSION["Username"];
+            } 
+            ?></span></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#" aria-label="perfil">Perfil</a></li>
             <li><a class="dropdown-item" href="#" aria-label="definições">Definições</a></li>
-            <li><a class="dropdown-item" href="./php/logOut.php" aria-label="sair" onclick="signOut()">Sair</a></li>
+            <li><a class="dropdown-item" href="./php/logOut.php" aria-label="sair">Sair</a></li>
           </ul>
         </li>
       <?php } ?>
