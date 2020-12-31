@@ -1,3 +1,5 @@
+<?php require './keys.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -106,7 +108,7 @@
     </script>
 
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAiJ-lNkIhJPQjKb9xYs2oqHZrwjUzQzY&callback=initMap&libraries=&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=<?php echo API_KEY; ?>&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
 

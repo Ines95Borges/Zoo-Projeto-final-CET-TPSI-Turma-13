@@ -80,7 +80,7 @@
           <img src="./img/indexCards/zoo-events.jpg" class="card-img-top" alt="Zoo Events">
           <div class="card-body">
             <h5 class="card-title" tabindex="0">Zoo events</h5>
-            <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores repellat exercitationem earum pariatur. Neque ipsa eius ex animi, consectetur ipsam! Aut, accusamus laborum veniam veritatis eligendi vel. Assumenda, repellat velit.</p>
+            <p class="card-text" tabindex="0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, quam molestiae. Dolorum alias magni quae magnam perspiciatis provident eligendi nostrum. Saepe odit molestias veritatis quaerat eius perferendis debitis modi sed.</p>
             <a href="./events.php" class="btn btn-primary">Ir para eventos</a>
           </div>
         </div>

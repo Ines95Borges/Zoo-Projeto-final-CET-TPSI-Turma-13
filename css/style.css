@@ -304,7 +304,7 @@
 }
 
 .topNavbar .navbar-nav .nav-link:hover {
-  font-size: 26px;
+  font-size: 22px;
 }
 
 .topNavbar .btn-outline-success {
@@ -351,6 +351,10 @@
 
 .topNavbar .dropdown .dropdown-menu a:hover {
   font-weight: bolder;
+}
+
+.topNavbar:hover {
+  opacity: 1;
 }
 
 /*---------------- End of Navbar styling ------------------*/

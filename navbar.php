@@ -52,7 +52,7 @@ require './php/googleSignInAPI/googleSignInConfig.php';
         <button class="btn btn-outline-success mr-3 ml-3" type="button" data-toggle="modal" data-target="#logIn">Entrar</button>
         <button class="btn btn-outline-success mr-5" type="button" data-toggle="modal" data-target="#signUp">Registar-se</button>
       </form>
-      <?php } if(isset($_SESSION['Client_ID'])  || isset($_COOKIE["id"])) {?>
+      <?php } if(isset($_SESSION['Client_ID'])  || (isset($_COOKIE["id"]) && isset($_COOKIE["sess"]))) {?>
         <li class="nav-item dropdown" id="loggedInDropdown">
           <img src="./img/login-icon.png" alt="User Icon" id="loginIcon" role="button" data-toggle="dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false" aria-label="login dropdown">
@@ -60,7 +60,7 @@ require './php/googleSignInAPI/googleSignInConfig.php';
           <ul class="dropdown-menu" id="dropdownLoggedIn" aria-labelledby="navbarDropdown">
             <li><span id="nameLoginDropdown">Está logado como <?php 
             if(isset($_COOKIE["id"])){
-              echo $userData['givenName']." ".$userData['familyName'];
+              // echo $userData['givenName']." ".$userData['familyName'];
             }else{
               echo $_SESSION["Username"];
             } 

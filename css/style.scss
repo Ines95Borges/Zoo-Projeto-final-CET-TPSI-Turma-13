@@ -247,7 +247,7 @@ $fontSizeNavbar: 20px;
     transition: all 0.4s linear;
   }
   .navbar-nav .nav-link:hover{
-    font-size: 26px;
+    font-size: 22px;
   }
   .btn-outline-success{
     border-color: $aquamarine;
@@ -286,6 +286,9 @@ $fontSizeNavbar: 20px;
     font-weight: bolder;
   }
   
+}
+.topNavbar:hover{
+  opacity: 1;
 }
 
 /*---------------- End of Navbar styling ------------------*/
