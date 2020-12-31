@@ -1,5 +1,5 @@
 <?php session_start(); 
-require './php/googleSignInAPI/googleSignInConfig.php';
+require './googleSignInConfig.php';
 ?>
 <nav class="navbar navbar-expand-lg topNavbar navbar-dark">
   <div class="container-fluid">
@@ -47,7 +47,7 @@ require './php/googleSignInAPI/googleSignInConfig.php';
       </ul>
 
       <!-- If the user is logged in -->
-      <?php if(!isset($_SESSION['Client_ID'])){ ?>
+      <?php if(!isset($_SESSION['Client_ID']) && !(isset($_COOKIE["id"]) && isset($_COOKIE["sess"]))){ ?>
       <form class="d-flex ">
         <button class="btn btn-outline-success mr-3 ml-3" type="button" data-toggle="modal" data-target="#logIn">Entrar</button>
         <button class="btn btn-outline-success mr-5" type="button" data-toggle="modal" data-target="#signUp">Registar-se</button>
@@ -108,7 +108,7 @@ require './php/googleSignInAPI/googleSignInConfig.php';
                     <input type="password" name="pwdLogin" id="pwdLogIn" class="col-11 pwd" autocomplete="current-password">
                     <button type="button" onclick="showPwd()" onmouseout="hidePwd()" class="col-1"><span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span></button>
                   </div>
-                  <div class="g-signin2 d-flex justify-content-center mt-5" data-onsuccess="onSignIn" data-width="300" data-height="50" onclick="window.location = '<?php echo $login_url; ?>'"></div>
+                  <div class="g-signin2 d-flex justify-content-center mt-5" data-width="300" data-height="50" onclick="window.location = '<?php echo $login_url; ?>'"></div>
                 </div>
               </fieldset>
 
@@ -207,26 +207,3 @@ require './php/googleSignInAPI/googleSignInConfig.php';
       </div>
     </div>
   </div>
-
-<!-- Sign in-->
-<script>
-function onSignIn(googleUser) {
-    var idToken = googleUser.getAuthResponse().id_token;
-
-    // Validate token
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://lvh.me/sign_in_with_google/login.php');
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.onreadystatechange = function(e) {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                window.location = "private.php";
-            }
-            else {
-                alert("Error: " + xhr.statusText);
-            }
-        }
-    }
-    xhr.send('idtoken=' + idToken + "&method=google");
-}
-</script>
