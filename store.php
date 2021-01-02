@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja</title>
   <link rel="icon" type="image/png" href="./img/favicon.png"/>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="js/bootstrap.min.js"></script>
@@ -16,6 +16,7 @@
   <script src="./js/jquery.min.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
   <script src="./js/addMoreButtonStore.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -65,15 +66,14 @@
 
         $sql = "SELECT * FROM v_show_products ORDER BY Product_ID limit 6";
         $query = mysqli_query($conn, $sql);
-        $counter=1;
 
         while($fetch = mysqli_fetch_assoc($query)){
         ?>
-          <div class="card" data-id=<?php echo (string)$counter; ?> style="width: 18rem; margin-bottom: 20px;">
+          <div class="card" data-id=<?php echo $fetch['Product_ID']; ?> style="width: 18rem; margin-bottom: 20px;">
             <img class="card-img-top" src="<?php echo $fetch['Link']; ?>" alt="<?php echo $fetch['NameProduct']; ?>">
             <div class="card-body">
               <h5 class="card-title" tabindex="0"><?php echo $fetch['NameProduct']; ?></h5>
-              <a class="btn btn-primary itemBtn" id="<?php echo $counter++; ?>" tabindex="0">Comprar por <?php echo $fetch['Price']; ?>€</a>
+              <a class="btn btn-primary itemBtn" id="<?php echo $fetch['Product_ID']; ?>" tabindex="0">Comprar por <?php echo $fetch['Price']; ?>€</a>
             </div>
           </div>
 

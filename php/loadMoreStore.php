@@ -12,7 +12,7 @@ $counter = $fetch_counter['total'] + 1;
 $output = "";
 while($fetch = mysqli_fetch_assoc($query)){ 
   $output .= "
-  <div class=\"card\" data-id=\"{$fetch['Product_ID']}\" style=\"width: 18rem; margin-bottom: 20px;\">
+  <div class=\"card\" data-id={$fetch['Product_ID']} style=\"width: 18rem; margin-bottom: 20px;\">
     <img class=\"card-img-top\" src=\"{$fetch['Link']}\" alt=\"{$fetch['NameProduct']}\">
     <div class=\"card-body\">
       <h5 class=\"card-title\" tabindex=\"0\">{$fetch['NameProduct']}</h5>

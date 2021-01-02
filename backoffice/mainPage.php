@@ -8,17 +8,28 @@ if(isset($_GET['backoffice'])){ ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backoffice Main Page</title>
     <link rel="icon" type="image/png" href="./img/favicon.png"/>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/backofficeStyle.css">
+    <script src="https://use.fontawesome.com/2ccf658e4d.js"></script>
   </head>
   <body>
     <header class="text-center">
       <h1>Fantastic Beasts and Where to Find Them Backoffice</h1>
     </header>
+    <div class="homeIconContainer">
+      <div class="homeDiv">
+        <a href="../index.php">
+          <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="#750D37" class="bi bi-house-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+            <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
     <main>
       <section>
         <div class="container d-flex flex-wrap justify-content-between">

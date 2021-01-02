@@ -1,4 +1,4 @@
-console.log("Script is being loaded!");
+console.log("CartScript is being loaded!");
 
 // Cart development
 
@@ -58,8 +58,8 @@ var StorageVar = class Storage{
     var childElementsOfItemCard = document.querySelector('[data-id="'+id+'"]').children;
     var srcImage = childElementsOfItemCard[0].src;
     var titleProduct = childElementsOfItemCard[1].children[0].innerHTML;
-    var ainnerHTML = childElementsOfItemCard[1].children[1].innerHTML;
-    var priceAsString = ainnerHTML.match(/\d+/g);
+    var innerHTML = childElementsOfItemCard[1].children[1].innerHTML;
+    var priceAsString = innerHTML.match(/\d+/g);
     var priceProduct = parseFloat(priceAsString[0] + "." + priceAsString[1]);
     return [srcImage, titleProduct, priceProduct, id];
   }
@@ -126,16 +126,16 @@ var Ui = class UI{
 
   updatePrice(){
     var arrayCartItem = document.querySelectorAll('.cart-item');
-    console.log(arrayCartItem);
+    // console.log(arrayCartItem);
     var finalPrice = 0;
     arrayCartItem.forEach((cartItem) => {
       var cartItemChildNodes = cartItem.childNodes;
-      console.log(cartItemChildNodes);
+      // console.log(cartItemChildNodes);
       var price = parseFloat(cartItemChildNodes[2].childNodes[3].innerHTML.replace("€", ""));
-      console.log(price);
+      // console.log(price);
       var amount = parseInt(cartItemChildNodes[4].childNodes[3].innerHTML);
-      console.log(amount);
-      finalPrice += (price*amount).toFixed(2);
+      // console.log(amount);
+      finalPrice += (price*amount).toFixed(2); // This rounds the number to two decimal cases
     });
     cartTotal.innerHTML = finalPrice.toString();
   }
@@ -146,5 +146,6 @@ var Ui = class UI{
     for(var i=lenghtArray; i>=5; i--){
       cartContentClear.childNodes[i].remove();
     }
+    cartItemsNumber = "0"; // Set the number of items in the cart to 0
   }
 }

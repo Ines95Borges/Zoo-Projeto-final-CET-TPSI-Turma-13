@@ -48,6 +48,47 @@ header h1 {
   border-radius: 30px;
 }
 
+.homeIconContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 30px;
+}
+
+.homeIconContainer .homeDiv {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #FFCAD4;
+  -webkit-box-shadow: 5px 5px 5px 5px #1C4A21;
+          box-shadow: 5px 5px 5px 5px #1C4A21;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homeIconContainer .homeDiv svg {
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.homeIconContainer .homeDiv svg:hover {
+  width: 58px;
+  height: 58px;
+}
+
 @media (max-width: 640px) {
   .container {
     display: -webkit-box;

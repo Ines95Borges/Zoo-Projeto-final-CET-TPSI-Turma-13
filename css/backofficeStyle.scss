@@ -42,6 +42,30 @@ header{
   border-radius: 30px;
 }
 
+.homeIconContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  .homeDiv{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: $pink;
+    box-shadow: 5px 5px 5px 5px $green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg{
+      transition: all 0.3s linear;
+    }
+    svg:hover{
+      width: 58px;
+      height: 58px;
+    }
+  }
+}
+
 @media (max-width: 640px){
   .container{
     display: flex;

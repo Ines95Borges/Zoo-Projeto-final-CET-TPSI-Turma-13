@@ -16,6 +16,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js"></script>
   <script src="./js/cartScript.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
