@@ -1,7 +1,10 @@
+<?php require_once './keys.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <meta name="google-signin-client_id" content=<?php echo GOOGLE_CLIENT_ID; ?>>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Animals</title>
   <link rel="icon" type="image/png" href="./img/favicon.png"/>

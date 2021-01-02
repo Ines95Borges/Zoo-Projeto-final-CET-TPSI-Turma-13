@@ -273,6 +273,9 @@ $fontSizeNavbar: 20px;
   .dropdown .dropdown-menu{
     background-color: $pink;
   }
+  .dropdown #dropdownLoggedIn{
+    transform: translate(-50%, 0);
+  }
   .dropdown .dropdown-menu hr{
     color: $green;
     height: 3px;

@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['register'])){
+if(isset($_POST['register']) && !empty($_POST['g-recaptcha-response'])){
 
   require 'includes/connection.php';
 
@@ -8,6 +8,7 @@ if(isset($_POST['register'])){
   $username = $_POST['username'];
   $pwd = $_POST['pwd'];
   $pwdRepeat = $_POST['pwd-repeat'];
+  $null = null;
 
   # Check if the fields in registration modal are empty
   if(empty($name) || empty($username) || empty($pwd) || empty($pwdRepeat)){
@@ -40,12 +41,12 @@ if(isset($_POST['register'])){
       }else{ # Everything is as it should be
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT); # Encrypts password
         # To enter the user data in the database
-        $sql = "CALL p_register_users(?,?,?)";
+        $sql = "CALL p_register_users(?,?,?,?,?)";
         if(!mysqli_stmt_prepare($stmt, $sql)){
           header("Location:../index.php?error=sqlerror2");
           exit();
         }else{
-          mysqli_stmt_bind_param($stmt, "sss", $name, $username, $hashedPwd);
+          mysqli_stmt_bind_param($stmt, "sssss", $name, $username, $hashedPwd, $null, $null);
           mysqli_stmt_execute($stmt);
           mysqli_stmt_store_result($stmt);
         }
@@ -59,7 +60,7 @@ if(isset($_POST['register'])){
   mysqli_stmt_close($stmt);
   mysqli_close($conn);
 }else{
-  header("Location:../index.php");
+  header("Location:../index.php?registrationunsuccessfulrecaptchaorsubmit");
   exit();
 }
 

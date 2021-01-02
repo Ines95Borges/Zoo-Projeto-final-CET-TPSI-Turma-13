@@ -18,6 +18,7 @@ if(isset($token["error"]) != "invalid_grant"){
   // Insert data
   $controller = new Controller;
   echo $controller -> insertData(array(
+    'avatar' => $userData['picture'],
     'email' => $userData['email'],
     'familyName' => $userData['familyName'],
     'givenName' => $userData['givenName']

@@ -337,6 +337,11 @@
   background-color: #FFCAD4;
 }
 
+.topNavbar .dropdown #dropdownLoggedIn {
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
 .topNavbar .dropdown .dropdown-menu hr {
   color: #1C4A21;
   height: 3px;

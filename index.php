@@ -1,8 +1,9 @@
+<?php require_once './keys.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
-  <meta name="google-signin-client_id" content="85445765798-dt47q70lkmf723l7smij02t3dbnifnua.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="<?php echo GOOGLE_CLIENT_ID; ?>">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fantastic Beasts And Where To Find Them</title>
@@ -15,7 +16,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
-  <script src="./js/wai-aria.js" defer></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
   

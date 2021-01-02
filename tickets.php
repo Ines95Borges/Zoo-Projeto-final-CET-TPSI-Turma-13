@@ -1,10 +1,12 @@
+<?php require_once './keys.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="UTF-8">
+  <meta name="google-signin-client_id" content=<?php echo GOOGLE_CLIENT_ID; ?>>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tickets</title>
-  <link rel="icon" type="image/png" href="./img/favicon.png"/>
   <link rel="icon" type="image/png" href="./img/favicon.png"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/bootstrap.min.css">

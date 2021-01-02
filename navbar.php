@@ -1,5 +1,6 @@
 <?php session_start(); 
 require './googleSignInConfig.php';
+require_once './keys.php';
 ?>
 <nav class="navbar navbar-expand-lg topNavbar navbar-dark">
   <div class="container-fluid">
@@ -54,21 +55,16 @@ require './googleSignInConfig.php';
       </form>
       <?php } if(isset($_SESSION['Client_ID'])  || (isset($_COOKIE["id"]) && isset($_COOKIE["sess"]))) {?>
         <li class="nav-item dropdown" id="loggedInDropdown">
-          <img src="./img/login-icon.png" alt="User Icon" id="loginIcon" role="button" data-toggle="dropdown">
+          <img src="<?php if(isset($_COOKIE['sess'])){echo $_SESSION['avatar'];}else{echo "./img/login-icon.png";}?>" alt="User Icon" id="loginIcon" role="button" data-toggle="dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false" aria-label="login dropdown">
           </a>
           <ul class="dropdown-menu" id="dropdownLoggedIn" aria-labelledby="navbarDropdown">
-            <li><span id="nameLoginDropdown">Está logado como <?php 
-            if(isset($_COOKIE["id"])){
-              // echo $userData['givenName']." ".$userData['familyName'];
-            }else{
-              echo $_SESSION["Username"];
-            } 
+            <li><span id="nameLoginDropdown">Está logado como <?php echo $_SESSION['Username'];
             ?></span></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#" aria-label="perfil">Perfil</a></li>
             <li><a class="dropdown-item" href="#" aria-label="definições">Definições</a></li>
-            <li><a class="dropdown-item" href="./php/logOut.php" aria-label="sair">Sair</a></li>
+            <li><a class="dropdown-item" href="./logOut.php" aria-label="sair">Sair</a></li>
           </ul>
         </li>
       <?php } ?>
@@ -108,6 +104,7 @@ require './googleSignInConfig.php';
                     <input type="password" name="pwdLogin" id="pwdLogIn" class="col-11 pwd" autocomplete="current-password">
                     <button type="button" onclick="showPwd()" onmouseout="hidePwd()" class="col-1"><span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span></button>
                   </div>
+                  <div class="g-recaptcha d-flex justify-content-center mt-3" data-sitekey="<?php echo SITE_KEY; ?>"></div>
                   <div class="g-signin2 d-flex justify-content-center mt-5" data-width="300" data-height="50" onclick="window.location = '<?php echo $login_url; ?>'"></div>
                 </div>
               </fieldset>
@@ -196,6 +193,7 @@ require './googleSignInConfig.php';
               </div>
             </div>
 
+            <div class="g-recaptcha d-flex justify-content-center mt-3" data-sitekey="<?php echo SITE_KEY; ?>"></div>
             <div class="g-signin2 d-flex justify-content-center mt-5" data-onsuccess="onSignIn" data-width="300" data-height="50" onclick="window.location = '<?php echo $login_url; ?>'"></div>
           
           </div>

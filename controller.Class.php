@@ -37,6 +37,7 @@ class Controller{
     return $code_hash;
   }
   function insertData($data){
+    // var_dump($data); exit();
     $db = new Connect;
     // The username of the person is their email
     $checkUser = $db->prepare("SELECT * FROM usernames WHERE Username=:username");
@@ -46,27 +47,36 @@ class Controller{
     // If there is no user in the database register
     if(!$info){
       $session = $this->generateCode(10);
-      $insertUser = $db -> prepare("CALL p_register_users(:name, :username, :password);");
+      $insertUser = $db -> prepare("CALL p_register_users(:name, :username, :password, :session, :avatar);");
       $insertUser -> execute([
         ":name" => $data["givenName"]." ".$data["familyName"],
         ":username" => $data["email"],
         ":password" => $this->generateCode(5),
+        ":session" => $session,
+        ":avatar" => $data['avatar']
       ]);
       
       // If the user was correctly inserted then iniciate cookies
       if($insertUser){
         setcookie("id", $db->lastInsertId(), time()+60*60*24*30, "/", NULL);
         setcookie("sess", $session, time()+60*60*24*30, "/", NULL);
-        header("Location: ../../index.php?registrationsuccessfulandcookiesinitiated");
+        session_start();
+        $_SESSION['avatar'] = $data['avatar'];
+        $_SESSION['name'] = $data["givenName"]." ".$data["familyName"];
+        header("Location: ./index.php?registrationsuccessfulandcookiesinitiated");
         exit();
       }else{
         return "Error inserting user!";
       }
     // If the user already exists in the database then iniciate cookies
     }else{
-      setcookie("id", $info["id"], time()+60*60*24*30, "/", NULL);
+      // var_dump($info); exit();
+      setcookie("id", $info["Client_ID"], time()+60*60*24*30, "/", NULL);
       setcookie("sess", $info["session"], time()+60*60*24*30, "/", NULL);
-      header("Location: ../../index.php?loginsuccessfulandcookiesinitiated");
+      session_start();
+      $_SESSION['avatar'] = $info['avatar'];
+      $_SESSION['Username'] = $info['Username'];
+      header("Location: ./index.php?loginsuccessfulandcookiesinitiated");
       exit();
     }
   }

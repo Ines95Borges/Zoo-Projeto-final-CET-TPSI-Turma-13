@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['login'])){
+if (isset($_POST['login']) && !empty($_POST['g-recaptcha-response'])){
   
   require './includes/connection.php';
 
