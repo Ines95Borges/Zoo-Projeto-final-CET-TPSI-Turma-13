@@ -1,9 +1,11 @@
 <?php
 
+// If there is a parameter called login and a response from the recaptcha api
 if(isset($_POST['register']) && !empty($_POST['g-recaptcha-response'])){
 
-  require 'includes/connection.php';
+  require 'includes/connection.php'; // Sets the connection to the database
 
+  // Gets the inputs
   $name = $_POST['firstName']." ".$_POST['lastName'];
   $username = $_POST['username'];
   $pwd = $_POST['pwd'];
@@ -26,31 +28,31 @@ if(isset($_POST['register']) && !empty($_POST['g-recaptcha-response'])){
   }else{
     $sql = "SELECT Username FROM usernames WHERE Username=?";
     $stmt = mysqli_stmt_init($conn); # Creating prepared statements
-    if(!mysqli_stmt_prepare($stmt, $sql)){
-      header("Location:../index.php?error=sqlerror1");
+    if(!mysqli_stmt_prepare($stmt, $sql)){ // If the SQL statement is not ready to execute sends the user the homepage with an error
+      header("Location:../index.php?error=sqlerror");
       exit();
-    }else{
-      mysqli_stmt_bind_param($stmt, "s", $username);
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_store_result($stmt);
-      $resultCheck = mysqli_num_rows($stmt);
+    }else{ // If the SQL statement is ready to execute
+      mysqli_stmt_bind_param($stmt, "s", $username); // Binds the parameters to the SQL statement
+      mysqli_stmt_execute($stmt); // Executes the SQL statement
+      mysqli_stmt_store_result($stmt); // Stores the resultset of the given statement locally
+      $resultCheck = mysqli_num_rows($stmt); // Stores the number of rows of the query
       # Check if there is already a username
-      if($resultCheck > 0){
+      if($resultCheck > 0){ // If there is a username sends the user to homepage with an error message
         header("Location:../index.html?error=usertaken&firstName=".$_POST['firstName']."&lastName=".$_POST['lastName']);
         exit();
       }else{ # Everything is as it should be
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT); # Encrypts password
         # To enter the user data in the database
         $sql = "CALL p_register_users(?,?,?,?,?)";
-        if(!mysqli_stmt_prepare($stmt, $sql)){
-          header("Location:../index.php?error=sqlerror2");
+        if(!mysqli_stmt_prepare($stmt, $sql)){ // If the SQL statement is not ready to execute sends the user the homepage with an error
+          header("Location:../index.php?error=sqlerror");
           exit();
-        }else{
-          mysqli_stmt_bind_param($stmt, "sssss", $name, $username, $hashedPwd, $null, $null);
-          mysqli_stmt_execute($stmt);
-          mysqli_stmt_store_result($stmt);
+        }else{ // If the SQL statement is ready to execute
+          mysqli_stmt_bind_param($stmt, "sssss", $name, $username, $hashedPwd, $null, $null); // Binds the parameters to the SQL statement
+          mysqli_stmt_execute($stmt); // Executes the statement
+          mysqli_stmt_store_result($stmt); // Stores the resultset of the given statement locally
         }
-        mysqli_query($conn, $sql);
+        mysqli_query($conn, $sql); // Registers the user and sends the user to homepage with successful message
         header("Location:../index.php?registrationsuccessful");
         exit();
       }
@@ -59,7 +61,7 @@ if(isset($_POST['register']) && !empty($_POST['g-recaptcha-response'])){
   # Close the connections to save resources
   mysqli_stmt_close($stmt);
   mysqli_close($conn);
-}else{
+}else{ // If the requested parameters are not set sends the user to homepage with a error message
   header("Location:../index.php?registrationunsuccessfulrecaptchaorsubmit");
   exit();
 }

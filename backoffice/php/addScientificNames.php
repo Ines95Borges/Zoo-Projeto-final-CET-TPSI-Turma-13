@@ -2,6 +2,7 @@
 
 if(isset($_POST['addScientificName'])){
 
+  # Get input fields
   require_once '../../php/includes/connection.php';
   $commonName = $_POST['scientificNameCommonNameAnimal'];
   $kingdom = $_POST['scientificNameKingdomAnimal'];
@@ -15,6 +16,7 @@ if(isset($_POST['addScientificName'])){
   if(empty($commonName) || empty($kingdom) || empty($phylum) || empty($class) || empty($order) || empty($family) || empty($genus) || empty($species)){
     header("Location:../mainPage.php?error=scientificNameEmptyFields");
   }else{
+    # Insert data into database
     $sql = "INSERT INTO scientificnames(ScientificName_ID, CommonName, Kingdom, Phylum, Class, OrderSci, Family, Genus, Species) VALUES (null, '$commonName','$kingdom', '$phylum', '$class', '$order', '$family', '$genus', '$species');";
     mysqli_query($conn, $sql) or die($sql);
 

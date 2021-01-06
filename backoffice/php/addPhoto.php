@@ -4,6 +4,7 @@ if(isset($_POST['addPhoto'])){
 
   require '../../php/includes/connection.php';
 
+  # Get the input fields
   $linkPhoto = $_POST['linkInputPhoto'];
   $namePhoto = $_POST['nameInputPhoto'];
 

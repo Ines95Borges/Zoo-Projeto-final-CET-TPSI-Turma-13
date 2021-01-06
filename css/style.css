@@ -37,15 +37,31 @@
 }
 
 .index-cards {
-  margin-top: auto;
+  margin-bottom: 3vh;
+  background-color: #1C4A21;
+  border: 2px dashed #750D37;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.index-cards img {
+  border-radius: 20px;
+}
+
+.index-cards h5 {
+  color: #75FFCD;
+}
+
+.index-cards p {
+  color: #FCE709;
 }
 
 .ticket-card:hover {
   background-color: #888;
 }
 
-.text-muted:hover {
-  color: white;
+.ticket-card:hover img {
+  border-radius: 20px;
 }
 
 .cart-items {
@@ -375,9 +391,72 @@ body main {
   margin-bottom: 150px;
 }
 
+body .box-error {
+  width: 70%;
+  margin-left: 15%;
+  border: 2px solid #FCE709;
+  background-color: #FFCAD4;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 500;
+  top: -200px;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+body .box-error h3 {
+  text-align: center;
+  color: #750D37;
+}
+
+body .box-error p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 2em;
+}
+
+body .box-error button {
+  margin-left: 70%;
+  width: 20%;
+  height: 50px;
+  background-color: #1C4A21;
+  border: none;
+  color: #75FFCD;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-weight: bolder;
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+@-webkit-keyframes showErrorMessage {
+  100% {
+    -webkit-transform: translateY(400px);
+            transform: translateY(400px);
+  }
+}
+
+@keyframes showErrorMessage {
+  100% {
+    -webkit-transform: translateY(400px);
+            transform: translateY(400px);
+  }
+}
+
 body .breadcrumbNav {
   position: relative;
   top: 100px;
+}
+
+@media screen and (max-width: 769px) {
+  body .box-error {
+    width: 96%;
+    margin-left: 2%;
+  }
+  body .box-error p {
+    font-size: 18px;
+  }
 }
 
 body .indexHeading {
@@ -505,7 +584,7 @@ body .institutionsMain hr {
   margin-bottom: 50px;
 }
 
-.footer .footer-links .col-md-4 {
+.footer .footer-links .col-md-4:nth-child(2), .footer .footer-links .col-md-4:last-child {
   border-left: 3px dotted #75FFCD;
 }
 
@@ -543,12 +622,14 @@ body .institutionsMain hr {
   font-weight: bolder;
   color: #750D37;
   position: relative;
-  top: -110px;
+  top: -50%;
   text-align: center;
 }
 
 .footer .footer-links img {
   margin: auto;
+  background-size: cover;
+  width: 100%;
 }
 
 /*------------------- End of Footer styling ---------------------*/

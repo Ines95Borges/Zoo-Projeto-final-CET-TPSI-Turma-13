@@ -16,9 +16,6 @@ header {
       -ms-flex-pack: center;
           justify-content: center;
   vertical-align: middle;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-bottom: 50px;
 }
 
@@ -38,8 +35,8 @@ header h1 {
           box-shadow: 10px 10px 10px 10px #FFCAD4;
   background-color: #1C4A21;
   color: #FCE709;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
   margin-bottom: 3vw;
 }
 

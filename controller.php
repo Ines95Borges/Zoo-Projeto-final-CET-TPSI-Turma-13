@@ -23,8 +23,8 @@ if(isset($token["error"]) != "invalid_grant"){
     'familyName' => $userData['familyName'],
     'givenName' => $userData['givenName']
   ));
-}else{
-  header("Location: index.php?tokennotallowed");
+}else{ // If token is not valid sends the user to homepage with an error message
+  header("Location: index.php?error=tokennotallowed");
   exit();
 }
 

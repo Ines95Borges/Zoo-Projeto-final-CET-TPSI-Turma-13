@@ -62,7 +62,7 @@
       <div class="container d-md-flex flex-wrap justify-content-around" id="showAnimalsPlants">
 
         <?php
-
+        // Get the animals from database
         require_once './php/includes/connection.php';
 
         $sql = "SELECT * FROM v_show_animals ORDER BY Animal_ID limit 6";

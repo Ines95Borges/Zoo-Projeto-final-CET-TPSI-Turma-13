@@ -70,7 +70,6 @@ class Controller{
       }
     // If the user already exists in the database then iniciate cookies
     }else{
-      // var_dump($info); exit();
       setcookie("id", $info["Client_ID"], time()+60*60*24*30, "/", NULL);
       setcookie("sess", $info["session"], time()+60*60*24*30, "/", NULL);
       session_start();

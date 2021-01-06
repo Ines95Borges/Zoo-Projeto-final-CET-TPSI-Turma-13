@@ -39,7 +39,7 @@
 
     <?php
       require_once './php/includes/connection.php';
-
+      # Get data about institutions of the zoo
       $sql = "SELECT * FROM institutions;";
       $query = mysqli_query($conn, $sql) or die($sql);
       while($fetch = mysqli_fetch_assoc($query)){ ?>

@@ -16,9 +16,18 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
+  <script src="./js/errors.js" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
+
+  <!-- Error box -->
+  <div class="box-error">
+    <h3>ERROR!</h3>
+    <p id="errorBoxText"></p>
+    <button id="errorButton">OK</button>
+  </div>
+  <!-- End of error box -->
   
   <?php require 'navbar.php'; ?>
 
@@ -48,6 +57,7 @@
             </div>
           </div>
         </div>
+      <!-- Welcome title -->  
       <div class="text-center indexHeading">
           <div class="ml-5">
             <h1 tabindex="0">Bem-vindo ao Zoo Fantastic Beasts And Where To Find Them</h1>

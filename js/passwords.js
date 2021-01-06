@@ -28,16 +28,15 @@ const arrayOfASCIINumbers = [33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,
 
 function generatePassword(){
   var lenghtPassword = 0;
-  lenghtPassword = Math.floor(Math.random() * 20 + 30);
+  lenghtPassword = Math.floor(Math.random() * 20 + 30); // Chose a random number for the lenght of the password between 20 and 50
   var generatedPassword = [];
   var randomPosition = "";
   for(var i=0; i<lenghtPassword; i++){
-    randomPosition = arrayOfASCIINumbers[Math.floor(Math.random() * arrayOfASCIINumbers.length)];
-    var randomCharacter = String.fromCharCode(randomPosition);
-    generatedPassword.push(randomCharacter);
+    randomPosition = arrayOfASCIINumbers[Math.floor(Math.random() * arrayOfASCIINumbers.length)]; // Get a random alphanumeric character
+    var randomCharacter = String.fromCharCode(randomPosition); // Converts the ASCII number to the character
+    generatedPassword.push(randomCharacter); // Appends the character to the array of the password
   }
-  console.log(generatedPassword.join(''));
-  $('input[name="pwd"]').val(generatedPassword.join(''));
-  $('input[name="pwd-repeat"]').val(generatedPassword.join(''));
+  $('input[name="pwd"]').val(generatedPassword.join('')); // Shows the generated password in the password input
+  $('input[name="pwd-repeat"]').val(generatedPassword.join('')); // Shows the generated password in the password repeat input
 }
 

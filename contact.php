@@ -19,7 +19,7 @@
   <script src="./js/cartScript.js" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
-    #map{
+    #map{ /* Styling the size of the map */ 
       height: 400px;
       width: 100%;
     }

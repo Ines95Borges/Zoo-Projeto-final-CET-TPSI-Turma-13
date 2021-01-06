@@ -11,216 +11,232 @@ $fontSizeNavbar: 20px;
 
 // Styling the dropdown image when the user is logged in
 #loggedInDropdown{
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 130px;
+  display: flex; // Change the box model to flexbox
+  flex-wrap: wrap; // Wrapping the items in the same row
+  margin-left: 130px; // Sets the left space between one element and the other
   #loginIcon{
-    width: 30px;
-    height: auto;
-    overflow: hidden;
-    border-radius: 50%;
+    width: 30px; // Sets the width of the icon
+    height: auto; // Sets the height to automatic
+    overflow: hidden; // When the icon is bigger than the container hides the part than is overflown
+    border-radius: 50%; // Gives the icon an ellipse shape
   }
 }
 
 // Classes that should not be visible to human eyes
 .visually-hidden, #pw-alert{
-  display: none;
-  visibility: hidden;
+  display: none; // Hides the content
+  visibility: hidden; // Hides the content
 }
 
 // Styling the skip to content anchor
-.skip-to-content{
-  clip: rect(1px,1px,1px,1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+.skip-to-content{ // Only available with focusing
+  clip: rect(1px,1px,1px,1px); // It is like cut in Paint. Cuts a part of the element only showing the specified size
+  height: 1px; // Sets a very low height to make it not visible
+  overflow: hidden; // When the text is bigger than the container hides the part than is overflown
+  position: absolute; // Sets the position relative to parent
+  white-space: nowrap; // Sequences of white-space will collapse into one
+  width: 1px; // Sets a very low width to make it invisible
 }
-.skip-to-content:focus{
-  clip:auto;
-  height: auto;
-  width: auto;
-  position: absolute;
-  overflow: auto;
+.skip-to-content:focus{ // When the element is focused
+  clip:auto; // Makes the element its original size and visible
+  height: auto; // Makes the element its original size and visible
+  width: auto; // Makes the element its original size and visible
+  position: absolute; // Positions it at the top left corner of the page
+  overflow: auto; // Makes the element its original size and visible
 }
 
 // Styling the index cards
-.index-cards{
-  margin-top: auto;
+.index-cards{ // Styling the cards in the index page
+  margin-bottom: 3vh; // Sets the space between the bottom of the lemeent and the next element
+  background-color: $green; // Sets the background color of the card
+  border: 2px dashed $claret; // Personalizes the border of the element
+  padding: 10px; // Sets the space betweeen the content of the element and the border
+  border-radius: 15px; // Round the corner of the borders
+  img{
+    border-radius: 20px; // Round the corners of the image
+  } 
+  h5{
+    color: $aquamarine; // Changes the color of the text of the heading
+  }
+  p{
+    color: $yellow; // Changes the color of the text
+  }
 }
 
 // Styling the ticket cards
 .ticket-card:hover{
-  background-color: #888;
-}
-.text-muted:hover{
-  color: white;
+  background-color: #888; // Changes the background color when passing the mouse over it
+  img{
+    border-radius: 20px; // Rounds the border of the image
+  }
 }
 
 
 // Start of shopping cart button
 .cart-items{
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  width: 17px;
-  height: 17px;
-  border-radius: 30%;
+  position: absolute; // Sets the position of the div
+  display: flex; // Changes the box model to flexbox
+  justify-content: center; // Aligns content to the center horizontaly
+  text-align: center; // Aligns text to the center horizontaly
+  align-items: center; // Aligns content to the center veticaly
+  width: 17px; // Sets the width od the div
+  height: 17px; // Sets the height of the div
+  border-radius: 30%; // Round the corners of the div element
 }
 // ---------------End of shopping cart button-----------------
 /* --------------- Cart ---------------- */
-.cart-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 30%;
-  height: 100%;
-  transition: width 2s;
-  background: rgba(172, 171, 170, 0.5);
-  z-index: 9998;
-  visibility: hidden;
+.cart-overlay { // Styling the sidediv that opens when the shopping cart button is clicked
+  position: fixed; // Makes the element fixed
+  top: 0; // Starts at the top of the page
+  right: 0; // Start at the right of the page so it is hidden
+  width: 30%; // Responsive width
+  height: 100%; // Responsive height
+  transition: width 2s; // Changing the width when a action is made
+  background: rgba(172, 171, 170, 0.5); // Sets the background color
+  z-index: 9998; // Makes it be in higher layer then the body so its visible
+  visibility: hidden; // Hides the element
 }
-.cart {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  z-index: 9999;
-  background: rgb(231, 226, 221);
-  padding: 1.5rem;
-  transition: width 2s;
-  transform: translateX(100%);
+.cart { // Styling the sidediv that opens when the shopping cart button is clicked
+  position: fixed; // Makes the element fixed
+  top: 0; // Starts at the top of the page
+  right: 0; // Start at the right of the page so it is hidden
+  width: 100%; // Responsive width
+  height: 100%; // Responsive height
+  overflow: scroll; // When the content overflows the recipient is given a scroll bar
+  z-index: 9999; // Makes it in higher layer than the previous eleement so it is visible on top of it
+  background: rgb(231, 226, 221); // Sets the background color
+  padding: 1.5rem; // Sets the space betweeen the content of the element and the border responsively
+  transition: width 2s; // Changing the width when a action is made
+  transform: translateX(100%); // Shifts the element to the right so it is hidden
 }
-.showCart {
-  transform: translateX(0);
+.showCart { // class aplied to show the cart
+  transform: translateX(0); // Shift the element to the left so it is visible
 }
-.transparentBcg {
-  visibility: visible;
+.transparentBcg { // class aplied to set the visibility of the cart overlay
+  visibility: visible; // Makes the element visible
 }
+// Makes the cart responsive when the viewport width is bigger than 769px
 @media screen and (min-width: 769px) {
   .cart {
-    width: 30vw;
-    min-width: 450px;
+    width: 30vw; // Sets the width responsively
+    min-width: 450px; // Sets the minimum width
   }
 }
 
+// Styling the button that closes the cart
 .close-cart {
-  font-size: 1.7rem;
-  cursor: pointer;
+  font-size: 1.7rem; // Sets the font size
+  cursor: pointer; // Change the cursos to pointer
 }
+// Styling the h2 heading of the cart
 .cart h2 {
-  text-transform: capitalize;
-  text-align: center;
-  letter-spacing: $mainSpacing;
-  margin-bottom: 2rem;
+  text-transform: capitalize; // Capitalize letters
+  text-align: center; // Aligns text to center
+  letter-spacing: $mainSpacing; // Sets the space between the letters
+  margin-bottom: 2rem; // Sets the space between the bottom of the eleement and the next element
 }
 /*---------- Cart Item -------------------- */
 .cart-item {
-  display: grid;
-  align-items: center;
-  grid-template-columns: auto 1fr auto;
-  grid-column-gap: 1.5rem;
-  margin: 1.5rem 0;
+  display: grid; // Changes the box model to grid
+  align-items: center; // Aligns the items to the center verticaly
+  grid-template-columns: auto 1fr auto; // Sets the columns of the grid
+  grid-column-gap: 1.5rem; // Sets the gap between the columns
+  margin: 1.5rem 0; // Sets the space between the borders and the adjacent elements
 }
 .cart-item img {
-  width: 75px;
-  height: 75px;
+  width: 75px; // Sets the width of the image
+  height: 75px; // Sets the height of the image
 }
 .cart-item h4 {
-  font-size: 0.85rem;
-  text-transform: capitalize;
-  letter-spacing: $mainSpacing;
+  font-size: 0.85rem; // Sets the font size of the h4 heading
+  text-transform: capitalize; // Captalizes the letters
+  letter-spacing: $mainSpacing; // Sets the space between the letters
 }
 .cart-item h5 {
-  margin: 0.5rem 0;
-  letter-spacing: $mainSpacing;
+  margin: 0.5rem 0; // Sets the space between the borders and the adjacent elements
+  letter-spacing: $mainSpacing; // Sets the space between the letters
 }
-.div-amount{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  align-content: center;
+.div-amount{ // Styling the number of elements inside the cart
+  display: flex; // Cahnges the box model to flexbox
+  flex-wrap: wrap; // Wraps items in a line
+  justify-content: center; // Aligns items to the center horizontaly
+  align-items: center; // Aligns items to the center verticaly
+  flex-direction: column; // Sets the direction of the container
+  align-content: center; // Aligns the lines of the flexbox
   .item-amount {
-    text-align: center;
+    text-align: center; // Aligns the text to the center
   }
 }
 
-.remove-item {
-  color: $claret;
-  cursor: pointer;
+.remove-item { // Styling the remove item button
+  color: $claret; // Sets the color of the text
+  cursor: pointer; // Changes the mouse to pointer
 }
 /*---------- End of Cart Item -------------------- */
 
 .cart-footer {
-  margin-top: 2rem;
-  letter-spacing: $mainSpacing;
-  text-align: center;
+  margin-top: 2rem; // Sets the space between the top of the eleement and the preious one
+  letter-spacing: $mainSpacing; // Sets the space between the letters
+  text-align: center; // Aligns the text to the center
 }
 .cart-footer h3 {
-  text-transform: capitalize;
-  margin-bottom: 1rem;
+  text-transform: capitalize; // Captalizes the letters
+  margin-bottom: 1rem; // Sets the space between the bottom of the element and the next element 
 }
 
 /* --------------- End of Cart ---------------- */
 
 /*----------------Start of Add More -----------------*/
 
-.addMoreContainer{
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
+.addMoreContainer{ // Styles the add more container
+  display: flex; // Changes the box model to flexbox
+  width: 100%; // Sets the width responsively
+  flex-wrap: wrap; // Wraps the items in aline
   .addMoreCenterItems{
-    display: flex;
-    width: 100%;
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
-    .addMoreButton{
-      margin-right: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 30px;
-      height: 30px;
-      border: 3px solid rgb(255, 187, 0);
-      background-color: rgb(236, 236, 159);
-      font-size: 20px;
-      text-align: center;
-      border-radius: 50%;
-      transition: all 0.3s linear;
+    display: flex; // Changes the box model to flexbox
+    width: 100%; // Sets the width responsively
+    flex-grow: 1; // Sets the ratio of growth when the viewport is grown
+    justify-content: center; // Aligns content to the center horizontaly
+    align-items: center; // Aligns content to the center verticaly
+    .addMoreButton{ // Styles the add more button
+      margin-right: 10px; // Gives a space of 10 px tthe right of the element
+      display: flex; // Changes the box model to flexbox
+      justify-content: center; // Aligns content to the center horizontaly
+      align-items: center; // Aligns content to the center verticaly
+      width: 30px; // Sets the width
+      height: 30px; // Sets the height
+      border: 3px solid rgb(255, 187, 0); // Styles the border
+      background-color: rgb(236, 236, 159); // Sets the background color of the element
+      font-size: 20px; // Set the size of the font
+      text-align: center; // Aligns text to the center
+      border-radius: 50%; // Gives the element a round shape
+      transition: all 0.3s linear; // Changes the properties when a action is made
     }
-    .addMoreButton:hover{
-      cursor: pointer;
-      font-size: 26px;
-      font-weight: bolder;
-      color: $green;
+    .addMoreButton:hover{ // Styles the add more button when the mouse is over it
+      cursor: pointer; // Changes the cursor to pointer
+      font-size: 26px; // Set the size of the font
+      font-weight: bolder; // Sets the boldness of the text
+      color: $green; // Sets the color
     }
-    .addMoreButtonStore:hover{
-      cursor: pointer;
-      font-size: 26px;
-      font-weight: bolder;
-      color: $green;
+    .addMoreButtonStore:hover{ // Styles the add more button of the store when the mouse is over it
+      cursor: pointer; // Changes the cursor to pointer
+      font-size: 26px; // Set the size of the font
+      font-weight: bolder; // Sets the boldness of the text
+      color: $green; // Sets the color
     }
-    .addMoreButtonStore{
-      margin-right: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 30px;
-      height: 30px;
-      border: 3px solid rgb(255, 187, 0);
-      background-color: rgb(236, 236, 159);
-      font-size: 20px;
-      text-align: center;
-      border-radius: 50%;
-      transition: all 0.3s linear;
+    .addMoreButtonStore{ // Styles the add more button of the store
+      margin-right: 10px; // Gives a space of 10 px tthe right of the element
+      display: flex; // Changes the box model to flexbox
+      justify-content: center; // Aligns content to the center horizontaly
+      align-items: center; // Aligns content to the center verticaly
+      width: 30px; // Sets the width
+      height: 30px; // Sets the height
+      border: 3px solid rgb(255, 187, 0); // Styles the border
+      background-color: rgb(236, 236, 159); // Sets the background color of the element
+      font-size: 20px; // Set the size of the font
+      text-align: center; // Aligns text to the center
+      border-radius: 50%; // Gives the element a round shape
+      transition: all 0.3s linear; // Changes the properties when a action is made
     }
   }
 }
@@ -228,189 +244,236 @@ $fontSizeNavbar: 20px;
 /*----------------End of Add More -----------------*/
 
 /*---------------- Navbar styling ------------------*/
-.topNavbar{
-  position: fixed;
-  border-bottom: 3px solid $aquamarine;
-  z-index:189;
-  height: 100px;
-  width: 100%;
-  display: block;
-  background-color: $claret;
-  opacity: 0.7;
-  top: 0;
-  .navbar-brand img, svg{
-    border-radius: 10px;
+.topNavbar{ // Styling of the top navbar
+  position: fixed; // Sets the position to fixed so that it doesn't disappear when the user scrolls down
+  border-bottom: 3px solid $aquamarine; // Styles the bottom border of the element
+  z-index:189; // Puts it in a higher layer than the body
+  height: 100px; // Sets the height
+  width: 100%; //Sets aresponsive width
+  display: block; // Changes the box model to block
+  background-color: $claret; // Changes the background color
+  opacity: 0.7; // Gives transparency
+  top: 0; // Puts it on the top of the page
+  .navbar-brand img, svg{ // Styles the logo image
+    border-radius: 10px; // Rounds the corners of the image
   }
-  .navbar-nav .nav-link{
-    font-size: $fontSizeNavbar;
-    color: $yellow;
-    transition: all 0.4s linear;
+  .navbar-nav .nav-link{ // Syles the link
+    font-size: $fontSizeNavbar; // Sets the size of the font
+    color: $yellow; // Changes the color of the text
+    transition: all 0.4s linear; // Changes the properties of the element when an action is made
   }
-  .navbar-nav .nav-link:hover{
-    font-size: 22px;
+  .navbar-nav .nav-link:hover{ // Styles the link when the mouse is over it
+    font-size: 22px; // Sets the size of the font
   }
-  .btn-outline-success{
-    border-color: $aquamarine;
-    color: $aquamarine;
-    transition: all 0.3s linear;
+  .btn-outline-success{ // Styles the button
+    border-color: $aquamarine; // Sets the color of the border of the element
+    color: $aquamarine; // Changes the color of the text
+    transition: all 0.3s linear; // Changes the properties of the element when an action is made
   }
-  .btn-outline-success:hover{
-    background-color: $aquamarine;
-    border-color: $green;
-    color: $green;
+  .btn-outline-success:hover{ // Styles the button when the mouse is over it
+    background-color: $aquamarine; // Changes the background color of the text
+    border-color: $green; // Sets the color of the border of the element
+    color: $green; // Changes the color of the text
   }
-  .cart-btn{
-    background-color: $yellow;
+  .cart-btn{ // Styles the cart button
+    background-color: $yellow; // Changes the background color
     .cart-items{
-      position:absolute;
-      border: 2px solid $green;
-      background-color: $aquamarine;
-      color: $green;
-      top: 19px;
-      right: 25px;
+      position:absolute; // Sets the position of the element
+      border: 2px solid $green; // Styles the border
+      background-color: $aquamarine; // Sets the background color
+      color: $green; // Sets the color
+      top: 19px; // Sets the distance from the top
+      right: 25px; // Sets the distance from the right
     }
   }
-  .dropdown .dropdown-menu{
-    background-color: $pink;
+  .dropdown .dropdown-menu{ // Styles the dropdown menu
+    background-color: $pink; // Changes the background color
   }
-  .dropdown #dropdownLoggedIn{
-    transform: translate(-50%, 0);
+  .dropdown #dropdownLoggedIn{ // Styles the dropdown menu when the user is logged in
+    transform: translate(-50%, 0); // Shifts the dropdown 50% to the left
   }
-  .dropdown .dropdown-menu hr{
-    color: $green;
-    height: 3px;
+  .dropdown .dropdown-menu hr{ // Styles the horizontal lines of the dropdown menu
+    color: $green; // Sets the color
+    height: 3px; // Sets the height
   }
-  .dropdown .dropdown-menu a{
-    background-color: $claret;
-    color: $aquamarine;
-    transition: all 0.3s linear;
+  .dropdown .dropdown-menu a{ // Styles the links of the dropdown menu
+    background-color: $claret; // Styles the background color
+    color: $aquamarine; // Sets the color of the text
+    transition: all 0.3s linear; // Changes the properties of the element when an action is made
   }
-  .dropdown .dropdown-menu a:hover{
-    font-weight: bolder;
+  .dropdown .dropdown-menu a:hover{ // Styles the links when the mouse is over it
+    font-weight: bolder; // Sets the boldness of the link
   }
   
 }
-.topNavbar:hover{
-  opacity: 1;
+.topNavbar:hover{ // Styles the navbar when the mouse is over it
+  opacity: 1; // Changes the transparency
 }
 
 /*---------------- End of Navbar styling ------------------*/
 
 /*---------------- Styling of the body ------------------*/
-body{
-  background-color:$green;
-  font-size: $fontSize;
+body{ // Styles the body of the page
+  background-color:$green; // Sets the background color
+  font-size: $fontSize; // Sets the font size
   main{
-    position: relative;
-    top: 100px;
-    margin-bottom: 150px;
+    position: relative; // Sets the position
+    top: 100px; //Sets the distance from the top
+    margin-bottom: 150px; // Sets the distance between the bottom of the element and the next element
+  }
+  .box-error{ // Styles the error box
+    width: 70%; // Set the width of the box
+    margin-left: 15%; // Center the box
+    border: 2px solid $yellow; // Styles the border
+    background-color: $pink; // Sets the background-color
+    border-radius: 10px; // Rounds the corners of the box
+    position: absolute; // Positions the box relative to its parent
+    z-index: 500; // Puts the box in a higher layer
+    top: -200px; // Hides the box
+    box-shadow: 5px 5px 10px rgba($color: black, $alpha: 0.4); // Gives a shadow to the box
+    h3{
+      text-align: center; // Aligns the text to the center
+      color: $claret; // Sets the color of the text
+    }
+    p{
+      text-align:center; // Aligns the text to the center
+      margin-top: 15px; // Set the space betwee this element and the previous one
+      font-size: 2em;
+    }
+    button{
+      margin-left:70%; // Positions the element to the right
+      width: 20%; // Sets the width odf the element
+      height: 50px; // Sets the height of the element
+      background-color: $green; // Sets the background color of the element
+      border: none; // Removes the border
+      color: $aquamarine; // Sets the color of the text
+      border-radius: 20px; // Rounds the corners of the button
+      margin-top: 15px; // Sets a space between the top of the element and the previous one
+      margin-bottom: 15px; // Sets a space between the bottom of the element and the next one
+      font-weight: bolder; // Makes the text bolder
+      box-shadow: 5px 5px 10px rgba($color: black, $alpha: 0.4); // Gives a shadow to the button
+    }
+    @keyframes showErrorMessage { // Creating animation
+      100%{ // At finish
+        transform: translateY(400px); // Move the element in y axis in the bottom direction
+      }
+    }
   }
   .breadcrumbNav{
-    position: relative;
-    top: 100px;
+    position: relative; // Sets the position
+    top: 100px; //Sets the distance from the top
+  }
+  @media screen and (max-width: 769px){ // When the screen is less than 769px
+    .box-error{ // Styles the error box
+      width: 96%; // Sets the width of the error box
+      margin-left: 2%; // Centers the div
+      p{ // Styles the p element
+        font-size: 18px; // Sets the size of the font
+      }
+    }
   }
   .indexHeading{
-    color: $yellow;
-    font-size: 30px;
+    color: $yellow; // Sets the color of the text
+    font-size: 30px; // Sets the size of the font
   }
-  .sidebar{
-    border-right: 3px solid $pink;
-    li{
-      margin-right: 20px;
+  .sidebar{ // Styling the sidebar
+    border-right: 3px solid $pink; // Styles the right border
+    li{ // Styling the li element
+      margin-right: 20px; // Sets the distance between the right side of theelement and the element next to it
     }
-    a{
-      color: $pink;
-      text-decoration: none;
+    a{ // Styling the anchor tag
+      color: $pink; // Sets the color of the text
+      text-decoration: none; // Removes the underlined
     }
-    a:hover{
-      font-size: 16px;
+    a:hover{ // Stylng the anchor tag when the mouse is over it
+      font-size: 16px; // Sets the font size
     }
-    h6{
-      color: $yellow;
-    }
-  }
-  #products, #showAnimalsPlants{
-    .addMoreCenterItems{
-      h6{
-        color: $pink;
-      }
-    }
-    .hrAddMore{
-      width: 100%;
-      color: $pink;
-      height: 3px;
+    h6{ // Styling the h6 heading
+      color: $yellow; // Sets the color of the text
     }
   }
-  .aboutusContainer{
-    h1{
-      color: $yellow;
+  #products, #showAnimalsPlants{ // Styles the container with the id products and showAnimalsPlants
+    .addMoreCenterItems{ // Styles the add more center items
+      h6{ // Styles the h6 heading
+        color: $pink; // Sets the color of the text
+      }
     }
-    p{
-      color: $pink;
+    .hrAddMore{ // Styles the horizontal line
+      width: 100%; // Sets the width responsively
+      color: $pink; // Sets the color
+      height: 3px; // Sets the height
     }
   }
-  .contactContainer{
-    margin-bottom: 20px;
-    section{
-      border: 2px solid $pink;
-      border-radius: 20px;
-      padding: 10px;
-      h3, h6{
-        color: $yellow;
-        margin-top: 10px;
+  .aboutusContainer{ // Styles sthe about us container
+    h1{ // Styles the headings h1
+      color: $yellow; // Sets the color of the text
+    }
+    p{ // Styles the paragraphs
+      color: $pink; // Sets the color of the text
+    }
+  }
+  .contactContainer{ // Styles the contact container
+    margin-bottom: 20px; // Sets the space between the bottom of the element and the next one
+    section{ // Styles the sections elements
+      border: 2px solid $pink; // Styles the border
+      border-radius: 20px; // Rounds the corner of the borders
+      padding: 10px; // Sets space between the content and the border
+      h3, h6{ // Styles the heading h3 and h6
+        color: $yellow; // Sets the color
+        margin-top: 10px; // Sets the space between the top of the element and the previous element
       }
-      p{
-        color: $pink;
-        margin-right: 20px;
-        margin-left: 20px; 
+      p{ // Styles the paragraphs
+        color: $pink; // Sets the color
+        margin-right: 20px; // Sets the space between the right of the element and the next element
+        margin-left: 20px;  // Sets the space between the left of the element and the previous element
       }
-      label{
-        color: $pink;
+      label{ // Styles the labels
+        color: $pink; // Sets the color of the text
       }
-      button{
-        width: 50%;
-        height: 30px;
-        text-align: center;
-        background-color: $claret;
-        color: $aquamarine;
-        border: 2px solid $aquamarine;
-        border-radius: 20px;
-        margin-top: 10px;
+      button{ // Styles the button
+        width: 50%; // Sets the width responsively
+        height: 30px; // Sets the height
+        text-align: center; // Aligns the text to the center
+        background-color: $claret; // Sets the background color
+        color: $aquamarine; // Sets the color of the text
+        border: 2px solid $aquamarine; // Styles the borders
+        border-radius: 20px; // Rounds the corners of the borders
+        margin-top: 10px; // Sets the space between the top of the element and the previous one
       }
-      .nameInput{
-        width: 100%;
+      .nameInput{ // Styles the name Input
+        width: 100%; // Sets the width responsively
       }
     }
   }
-  .eventContainer{
-    h3 a{
-      color: $yellow;
-      text-decoration: none;
+  .eventContainer{ // Styles the container of the eventes page
+    h3 a{ // Styles the anchor of the he heading
+      color: $yellow; // Sets the color of the text
+      text-decoration: none; // Removes the underlined
     }
-    h3 a:hover{
-      cursor: pointer;
+    h3 a:hover{ // Styles the anchor when the mouse is over it
+      cursor: pointer; // Changes the cursos to pointer
     }
-    p{
-      color: $pink;
-    }
-  }
-  .ticketHeader{
-    h1{
-      color: $yellow;
+    p{ // Styles the paragraph
+      color: $pink; // Changes the color of the text
     }
   }
-  .institutionsMain{
-    h1{
-      color: $yellow;
+  .ticketHeader{ // Styles the header of the tickets page
+    h1{ // Styles the h1 heading
+      color: $yellow; // Sets the color of the text
     }
-    #intitutionsContainer{
-      h2, h3, h4, h5, h6{
-        color: $pink;
+  }
+  .institutionsMain{ // Styles the main element of the institutions page
+    h1{ // Styles the h1 heading
+      color: $yellow; // Sets the color of the text
+    }
+    #intitutionsContainer{ // Styles the container of the institutions page
+      h2, h3, h4, h5, h6{ // Styles the h2, h3, h4m h5, h6 headings
+        color: $pink; // Sets the color to pink
       }
     }
-    hr{
-      color: $aquamarine;
-    }
+    hr{ // Styles the horizontal line of the institutions page
+      color: $aquamarine; // Sets the color of the line
+    } 
   }
 }
 
@@ -418,50 +481,52 @@ body{
 
 /*---------------- Styling of the footer -------------------*/
 .footer{
-  .footerSeparator{
-    color: $aquamarine;
-    height: 3px;
+  .footerSeparator{ // Styles the horizontal line of the footer
+    color: $aquamarine; // Sets the color of the line
+    height: 3px; // Sets the height
   }
-  .footer-links{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    .col-md-4{
-      border-left: 3px dotted $aquamarine;
+  .footer-links{ // Styling of the footer links
+    margin-top: 50px; // Sets the space between the top of the element and the previous one
+    margin-bottom: 50px; // Sets the space between the bottom of the element and the next one
+    .col-md-4:nth-child(2), .col-md-4:last-child{ // Styles the columns
+      border-left: 3px dotted $aquamarine; // Styles the left border of the columns
     }
   }
-  .footer-rights{
-    background-color: $claret;
-    small{
-      color: $yellow;
-      font-size: 18px;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  .footer-rights{ // Styles the footer copyrights section
+    background-color: $claret; // Sets the background color
+    small{ // Styles the small element
+      color: $yellow; // Sets the color of the text
+      font-size: 18px; // Sets the size of the font
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; // Sets the type of the font
     }
   }
-  .listHeadings{
-    font-size: 16px;
-    font-weight: bold;
-    color: $yellow;
+  .listHeadings{ // Styles the titles of the lists
+    font-size: 16px; // Sets the size of the font
+    font-weight: bold; // Sets the boldness of the font
+    color: $yellow; // Sets the color of the text
   }
-  .list-item a{
-    text-decoration: none;
-    list-style-type: none;
-    color: $aquamarine;
-    transition: all 0.3s linear;
+  .list-item a{ // Styles the links of the lists
+    text-decoration: none; // Removes underlined
+    list-style-type: none; // Removes bullets
+    color: $aquamarine; // Sets the color of the text
+    transition: all 0.3s linear; // Changes the properties of the element when an action is made
   }
-  .list-item a:hover{
-    font-size: 16px;
-    color: $pink;
+  .list-item a:hover{ // Styles the link when the mouse is over it
+    font-size: 16px; // Sets the size of the font
+    color: $pink; // Sets the color of the text
   }
-  blockquote{
-    font-size: 20px;
-    font-weight: bolder;
-    color: $claret;
-    position: relative;
-    top: -110px;
-    text-align: center;
+  blockquote{ // Styles the blockquote
+    font-size: 20px; // Sets the size of the font
+    font-weight: bolder; // Sets the boldness of the text
+    color: $claret; // Sets the color of the text
+    position: relative; // Sets the position relative to its parent
+    top: -50%; // Vertical aligns to the middle
+    text-align: center; // Align text to the center horizontaly
   }
-  .footer-links img{
-    margin: auto;
+  .footer-links img{ // Styles the image of the footer
+    margin: auto; // Center the image
+    background-size: cover; // Makes the image occupy the full space
+    width: 100%; // Makes the image occupy the width of the column
   }
 }
 

@@ -1,82 +1,90 @@
+// Utilized to count padding, border and margin as a whole
 *{
   box-sizing: border-box;
 }
-//Variables
+
+// Variables
 $green: #1C4A21;
 $claret: #750D37;
 $yellow: #FCE709;
 $pink: #FFCAD4;
 
+// Gives an image as a background -image that stays on an inferior layer
 body{
   background-image: url(../img/backoffice/backoffice-background.jpg);
 }
 
+// Styling the header
 header{
-  display: flex;
-  height: 40vh;
-  justify-content: center;
-  vertical-align: middle;
-  align-items: center;
-  margin-bottom: 50px;
+  display: flex; // Change the box model to flexbox
+  height: 40vh; // CHanging the height with responsive tools
+  justify-content: center; // Align the text in the center horizontally
+  vertical-align: middle; // Align the text in the center vertically
+  margin-bottom: 50px; // Gives a space between the bottom of this element and the next one
+  // Styling the heading inside the header
   h1{
     color: red;
-    text-shadow: 0 2px white, 0 3px rgb(255, 0, 0);
-    letter-spacing: 2px;
-    font-size: 5vw;
+    text-shadow: 0 2px white, 0 3px rgb(255, 0, 0); // Gives style to the text
+    letter-spacing: 2px; // Sets the distance between letters
+    font-size: 5vw; // Sets the size of the font
   }
 }
 
+// Styling the buttons that change the database
 .changeButton{
-  width: 30vw;
-  height: 10vw;
-  font-size: 2vw;
-  border-radius: 15px;
-  box-shadow: 10px 10px 10px 10px $pink;
-  background-color: $green;
-  color: $yellow;
-  transition: all 0.5s;
-  margin-bottom: 3vw;
+  width: 30vw; // Sets the width of the button
+  height: 10vw; // Sets the height of the button
+  font-size: 2vw; // Sets the size of the font
+  border-radius: 15px; // Sets the rounding of the corners of the button
+  box-shadow: 10px 10px 10px 10px $pink; // Gives shadown to the button
+  background-color: $green; // Sets the background color of the button
+  color: $yellow; // Sets the color of the text
+  transition: all 0.5s linear; // Sets what, for how long and how the properties change when given a selector like hover
+  margin-bottom: 3vw; // Sets the space between the bottom of the element and the next element with responsive measurements
 }
+// Style of the button when the mouse is over it
 .changeButton:hover{
-  background-color: $claret;
-  border-radius: 30px;
+  background-color: $claret; // Changes the background color
+  border-radius: 30px; // Changes the rounding of the border
 }
 
-.homeIconContainer{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  .homeDiv{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color: $pink;
-    box-shadow: 5px 5px 5px 5px $green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    svg{
-      transition: all 0.3s linear;
+// Style of the home icon
+.homeIconContainer{ // Styling of the container div
+  display: flex; // Change the box model to flexbox
+  justify-content: center; // Align the content to the center horizontaly
+  align-items: center; // Align the content to the center verticaly
+  margin-bottom: 30px; // Gives space between the bottom of the element and the next element
+  .homeDiv{ // Styling the home div container
+    width: 90px; // Setting the width of the element
+    height: 90px; // Setting the height of the element
+    border-radius: 50%; // Giving a circle shape
+    background-color: $pink; // Setting the background color to a shade of pink
+    box-shadow: 5px 5px 5px 5px $green; // Setting the shadow of the element
+    display: flex; // Change the box model to flexbox
+    justify-content: center; // Align the content to the center horizontaly
+    align-items: center; // Align the content to the center verticaly
+    svg{ // Styling the icon
+      transition: all 0.3s linear; // Sets what, for how long and how the properties change when given a selector like hover
     }
-    svg:hover{
-      width: 58px;
-      height: 58px;
+    svg:hover{ // Styling the icon when the mouse is over it
+      width: 58px; // Enlarging the icon horizontaly
+      height: 58px; // Enlarging the icon verticaly
     }
   }
 }
 
+// Styling the container of the buttons and the buttons when the viewport is less than 640px
 @media (max-width: 640px){
-  .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
+  .container{ // Styling the container
+    display: flex; // Change the box model to flexbox
+    justify-content: center; // Align the content to the center horizontaly
+    align-items: center; // Align the content to the center verticaly
+    margin-left: auto; // Aligning the container to the center
   }
-  .changeButton{
-    width: 100%;
-    margin-bottom: 10vh;
-    font-size: 4vw;
-    box-shadow: 5px 5px 5px 5px $pink;
+  .changeButton{ // Styling the buttons
+    width: 100%; // Make it occupy the the enntire space horizontally
+    margin-bottom: 10vh; // Gives space between the bottom of the element and the next one
+    font-size: 4vw; // Sets the size of the font responsively
+    box-shadow: 5px 5px 5px 5px $pink; // Sets the shadow of the button
   }
 }

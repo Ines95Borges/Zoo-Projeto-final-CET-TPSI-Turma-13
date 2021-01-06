@@ -20,6 +20,7 @@ if(isset($_GET['backoffice'])){ ?>
     <header class="text-center">
       <h1>Fantastic Beasts and Where to Find Them Backoffice</h1>
     </header>
+    <!-- Home button -->
     <div class="homeIconContainer">
       <div class="homeDiv">
         <a href="../index.php">
@@ -30,7 +31,9 @@ if(isset($_GET['backoffice'])){ ?>
         </a>
       </div>
     </div>
+    <!-- End of home button -->
     <main>
+    <!-- Buttons that open modals -->
       <section>
         <div class="container d-flex flex-wrap justify-content-between">
           <button type="button" data-toggle="modal" data-target="#addAnimalsModal" class="changeButton">Adicionar animais</button>
@@ -53,6 +56,7 @@ if(isset($_GET['backoffice'])){ ?>
           <button type="button" data-toggle="modal" data-target="#removePlantDetailModal" class="changeButton">Remover detalhes plantas</button>
         </div>
       </section>
+      <!-- End of buttons that open modals -->
 
       <!-- Modal Add Animals-->
       <div class="modal fade" id="addAnimalsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
