@@ -11,7 +11,7 @@ if(isset($_POST['removeEnclosure'])){
   $sql = "DELETE FROM enclosures WHERE Name = '$nameOption'";
   mysqli_query($conn, $sql);
 
-  header("Location:../mainPage.php?successfullydeleted");
+  header("Location:../mainPage.php?successfullydeleted&backoffice");
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;800;900&display=swap");
 #loggedInDropdown {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,8 +39,8 @@
 
 .index-cards {
   margin-bottom: 3vh;
-  background-color: #1C4A21;
-  border: 2px dashed #750D37;
+  background-color: #00203F;
+  border: 2px dashed #101820;
   padding: 10px;
   border-radius: 15px;
 }
@@ -49,11 +50,11 @@
 }
 
 .index-cards h5 {
-  color: #75FFCD;
+  color: #ADEFD1;
 }
 
 .index-cards p {
-  color: #FCE709;
+  color: #FEE715;
 }
 
 .ticket-card:hover {
@@ -193,7 +194,7 @@
 }
 
 .remove-item {
-  color: #750D37;
+  color: #101820;
   cursor: pointer;
 }
 
@@ -262,14 +263,14 @@
   cursor: pointer;
   font-size: 26px;
   font-weight: bolder;
-  color: #1C4A21;
+  color: #00203F;
 }
 
 .addMoreContainer .addMoreCenterItems .addMoreButtonStore:hover {
   cursor: pointer;
   font-size: 26px;
   font-weight: bolder;
-  color: #1C4A21;
+  color: #00203F;
 }
 
 .addMoreContainer .addMoreCenterItems .addMoreButtonStore {
@@ -298,12 +299,12 @@
 /*---------------- Navbar styling ------------------*/
 .topNavbar {
   position: fixed;
-  border-bottom: 3px solid #75FFCD;
+  border-bottom: 3px solid #ADEFD1;
   z-index: 189;
   height: 100px;
   width: 100%;
   display: block;
-  background-color: #750D37;
+  background-color: #101820;
   opacity: 0.7;
   top: 0;
 }
@@ -314,7 +315,7 @@
 
 .topNavbar .navbar-nav .nav-link {
   font-size: 20px;
-  color: #FCE709;
+  color: #FEE715;
   -webkit-transition: all 0.4s linear;
   transition: all 0.4s linear;
 }
@@ -324,33 +325,33 @@
 }
 
 .topNavbar .btn-outline-success {
-  border-color: #75FFCD;
-  color: #75FFCD;
+  border-color: #ADEFD1;
+  color: #ADEFD1;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
 .topNavbar .btn-outline-success:hover {
-  background-color: #75FFCD;
-  border-color: #1C4A21;
-  color: #1C4A21;
+  background-color: #ADEFD1;
+  border-color: #00203F;
+  color: #00203F;
 }
 
 .topNavbar .cart-btn {
-  background-color: #FCE709;
+  background-color: #FEE715;
 }
 
 .topNavbar .cart-btn .cart-items {
   position: absolute;
-  border: 2px solid #1C4A21;
-  background-color: #75FFCD;
-  color: #1C4A21;
+  border: 2px solid #00203F;
+  background-color: #ADEFD1;
+  color: #00203F;
   top: 19px;
   right: 25px;
 }
 
 .topNavbar .dropdown .dropdown-menu {
-  background-color: #FFCAD4;
+  background-color: #dda15e;
 }
 
 .topNavbar .dropdown #dropdownLoggedIn {
@@ -359,13 +360,13 @@
 }
 
 .topNavbar .dropdown .dropdown-menu hr {
-  color: #1C4A21;
+  color: #00203F;
   height: 3px;
 }
 
 .topNavbar .dropdown .dropdown-menu a {
-  background-color: #750D37;
-  color: #75FFCD;
+  background-color: #101820;
+  color: #ADEFD1;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
@@ -381,8 +382,9 @@
 /*---------------- End of Navbar styling ------------------*/
 /*---------------- Styling of the body ------------------*/
 body {
-  background-color: #1C4A21;
+  background-color: #00203F;
   font-size: 14px;
+  font-family: "Poppins", sans-serif;
 }
 
 body main {
@@ -394,8 +396,8 @@ body main {
 body .box-error {
   width: 70%;
   margin-left: 15%;
-  border: 2px solid #FCE709;
-  background-color: #FFCAD4;
+  border: 2px solid #FEE715;
+  background-color: #dda15e;
   border-radius: 10px;
   position: absolute;
   z-index: 500;
@@ -406,7 +408,7 @@ body .box-error {
 
 body .box-error h3 {
   text-align: center;
-  color: #750D37;
+  color: #101820;
 }
 
 body .box-error p {
@@ -419,9 +421,9 @@ body .box-error button {
   margin-left: 70%;
   width: 20%;
   height: 50px;
-  background-color: #1C4A21;
+  background-color: #00203F;
   border: none;
-  color: #75FFCD;
+  color: #ADEFD1;
   border-radius: 20px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -460,12 +462,13 @@ body .breadcrumbNav {
 }
 
 body .indexHeading {
-  color: #FCE709;
-  font-size: 30px;
+  color: #FEE715;
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
 body .sidebar {
-  border-right: 3px solid #FFCAD4;
+  border-right: 3px solid #dda15e;
 }
 
 body .sidebar li {
@@ -473,7 +476,7 @@ body .sidebar li {
 }
 
 body .sidebar a {
-  color: #FFCAD4;
+  color: #dda15e;
   text-decoration: none;
 }
 
@@ -482,25 +485,25 @@ body .sidebar a:hover {
 }
 
 body .sidebar h6 {
-  color: #FCE709;
+  color: #FEE715;
 }
 
 body #products .addMoreCenterItems h6, body #showAnimalsPlants .addMoreCenterItems h6 {
-  color: #FFCAD4;
+  color: #dda15e;
 }
 
 body #products .hrAddMore, body #showAnimalsPlants .hrAddMore {
   width: 100%;
-  color: #FFCAD4;
+  color: #dda15e;
   height: 3px;
 }
 
 body .aboutusContainer h1 {
-  color: #FCE709;
+  color: #FEE715;
 }
 
 body .aboutusContainer p {
-  color: #FFCAD4;
+  color: #dda15e;
 }
 
 body .contactContainer {
@@ -508,33 +511,33 @@ body .contactContainer {
 }
 
 body .contactContainer section {
-  border: 2px solid #FFCAD4;
+  border: 2px solid #dda15e;
   border-radius: 20px;
   padding: 10px;
 }
 
 body .contactContainer section h3, body .contactContainer section h6 {
-  color: #FCE709;
+  color: #FEE715;
   margin-top: 10px;
 }
 
 body .contactContainer section p {
-  color: #FFCAD4;
+  color: #dda15e;
   margin-right: 20px;
   margin-left: 20px;
 }
 
 body .contactContainer section label {
-  color: #FFCAD4;
+  color: #dda15e;
 }
 
 body .contactContainer section button {
   width: 50%;
   height: 30px;
   text-align: center;
-  background-color: #750D37;
-  color: #75FFCD;
-  border: 2px solid #75FFCD;
+  background-color: #101820;
+  color: #ADEFD1;
+  border: 2px solid #ADEFD1;
   border-radius: 20px;
   margin-top: 10px;
 }
@@ -544,7 +547,7 @@ body .contactContainer section .nameInput {
 }
 
 body .eventContainer h3 a {
-  color: #FCE709;
+  color: #FEE715;
   text-decoration: none;
 }
 
@@ -553,29 +556,29 @@ body .eventContainer h3 a:hover {
 }
 
 body .eventContainer p {
-  color: #FFCAD4;
+  color: #dda15e;
 }
 
 body .ticketHeader h1 {
-  color: #FCE709;
+  color: #FEE715;
 }
 
 body .institutionsMain h1 {
-  color: #FCE709;
+  color: #FEE715;
 }
 
 body .institutionsMain #intitutionsContainer h2, body .institutionsMain #intitutionsContainer h3, body .institutionsMain #intitutionsContainer h4, body .institutionsMain #intitutionsContainer h5, body .institutionsMain #intitutionsContainer h6 {
-  color: #FFCAD4;
+  color: #dda15e;
 }
 
 body .institutionsMain hr {
-  color: #75FFCD;
+  color: #ADEFD1;
 }
 
 /*---------------- End of body styling ------------------*/
 /*---------------- Styling of the footer -------------------*/
 .footer .footerSeparator {
-  color: #75FFCD;
+  color: #ADEFD1;
   height: 3px;
 }
 
@@ -585,15 +588,15 @@ body .institutionsMain hr {
 }
 
 .footer .footer-links .col-md-4:nth-child(2), .footer .footer-links .col-md-4:last-child {
-  border-left: 3px dotted #75FFCD;
+  border-left: 3px dotted #ADEFD1;
 }
 
 .footer .footer-rights {
-  background-color: #750D37;
+  background-color: #101820;
 }
 
 .footer .footer-rights small {
-  color: #FCE709;
+  color: #FEE715;
   font-size: 18px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -601,26 +604,26 @@ body .institutionsMain hr {
 .footer .listHeadings {
   font-size: 16px;
   font-weight: bold;
-  color: #FCE709;
+  color: #FEE715;
 }
 
 .footer .list-item a {
   text-decoration: none;
   list-style-type: none;
-  color: #75FFCD;
+  color: #ADEFD1;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
 .footer .list-item a:hover {
   font-size: 16px;
-  color: #FFCAD4;
+  color: #dda15e;
 }
 
 .footer blockquote {
   font-size: 20px;
   font-weight: bolder;
-  color: #750D37;
+  color: #101820;
   position: relative;
   top: -50%;
   text-align: center;

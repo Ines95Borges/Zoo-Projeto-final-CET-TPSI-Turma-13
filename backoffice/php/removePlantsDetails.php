@@ -11,7 +11,7 @@ if(isset($_POST['removePlantDetail'])){
   $sql = "DELETE FROM detailsplants WHERE Height = $nameOption";
   mysqli_query($conn, $sql) or die($sql); 
 
-  header("Location:../mainPage.php?successfullydeleted");
+  header("Location:../mainPage.php?successfullydeleted&backoffice");
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }

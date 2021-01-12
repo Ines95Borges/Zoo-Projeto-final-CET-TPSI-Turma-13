@@ -20,9 +20,9 @@ if(isset($_POST['addScientificName'])){
     $sql = "INSERT INTO scientificnames(ScientificName_ID, CommonName, Kingdom, Phylum, Class, OrderSci, Family, Genus, Species) VALUES (null, '$commonName','$kingdom', '$phylum', '$class', '$order', '$family', '$genus', '$species');";
     mysqli_query($conn, $sql) or die($sql);
 
-    header("Location:../mainPage.php?successfuladdition");
+    header("Location:../mainPage.php?successfuladdition&backoffice");
   }
 
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }

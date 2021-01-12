@@ -1,0 +1,103 @@
+#payment h1, #payment h2 {
+  color: #ADEFD1;
+}
+
+table th {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bolder;
+  color: #FEE715;
+}
+
+table td {
+  text-align: center;
+  padding: 1%;
+  font-size: 1.2rem;
+}
+
+table td:first-child {
+  width: 20%;
+  min-width: 150px;
+}
+
+table td:nth-child(2) {
+  width: 50%;
+  min-width: 70px;
+  color: #dda15e;
+}
+
+table td:nth-child(3) {
+  width: 20%;
+  min-width: 50px;
+  color: #ADEFD1;
+}
+
+table td:last-child {
+  width: 10%;
+  min-width: 30px;
+  color: #ADEFD1;
+}
+
+table img {
+  border-radius: 50%;
+  -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+          clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+
+#payment-form label {
+  color: #FEE715;
+}
+
+table input[type="number"] {
+  width: 60px;
+  background-color: #00203F;
+  border: none;
+  color: #ADEFD1;
+}
+
+#payment-form input[type="text"] {
+  background-color: #00203F;
+  color: #fff;
+  border-radius: 30px;
+  border: 1px solid #FEE715;
+}
+
+.payment-button {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background-color: #ADEFD1;
+  color: #00203F;
+  font-weight: bolder;
+  font-size: 24px;
+  border-radius: 50px;
+}
+
+#paymentSuccess {
+  padding: 10%;
+}
+
+#paymentSuccess h1 {
+  color: #ADEFD1;
+}
+
+#paymentSuccess h3 {
+  color: #FEE715;
+}
+
+#paymentSuccess h3 a {
+  color: #dda15e;
+  text-decoration: none;
+}
+
+#paymentSuccess div a {
+  color: #dda15e;
+  text-decoration: none;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+#paymentSuccess div a:hover {
+  font-size: 1.7rem;
+}
+/*# sourceMappingURL=payment.css.map */

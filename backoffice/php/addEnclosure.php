@@ -18,7 +18,7 @@ if(isset($_POST['addEnclosure'])){
   # Insert data into database
   $sql = "INSERT INTO enclosures(Enclosure_ID, Institution_ID, Name, Type) VALUES (null, '$institutionID', '$nameEnclosure', '$enclosureType');";
   mysqli_query($conn, $sql) or die($sql);
-  header("Location:../mainPage.php?enclosureSuccessfullyAdded");
+  header("Location:../mainPage.php?enclosureSuccessfullyAdded&backoffice");
 }else{
-  header("Location:../mainPage.php?error=unsuccessfuladdition");
+  header("Location:../mainPage.php?error=unsuccessfuladdition&backoffice");
 }

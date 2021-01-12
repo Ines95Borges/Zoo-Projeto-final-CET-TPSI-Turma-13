@@ -12,7 +12,7 @@ if(isset($_POST['addPhoto'])){
   $sql = "INSERT INTO fotos(Foto_ID, Name, Link) VALUES (null, '$namePhoto', '$linkPhoto');";
   mysqli_query($conn, $sql);
 
-  header("Location:../mainPage.php?successfullyAdded");
+  header("Location:../mainPage.php?successfullyAdded&backoffice");
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }

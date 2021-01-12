@@ -16,6 +16,7 @@
   <script src="./js/jquery.min.js"></script>
   <script src="./js/passwords.js" defer></script>
   <script src="./js/cartScript.js" defer></script>
+  <script src="./js/tickets.js" defer></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
@@ -31,7 +32,7 @@
     </ol>
   </nav>
 
-  <header class="mb-5 mt-5">
+  <header style="margin-top: 120px;">
     <div class="row text-center ticketHeader">
       <h1 tabindex="0">Comprar tickets</h1>
     </div>
@@ -40,7 +41,7 @@
   <main id="main">
     <div class="container mb-5">
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col ticket-card">
+        <div class="col ticket-card" id="singleTicket">
           <div class="card h-100 ticket-card">
             <img src="./img/tickets/ticket-single.jpg" class="card-img-top" alt="Single ticket">
             <div class="card-body ticket-card">
@@ -52,7 +53,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col" id="doubleTicket">
           <div class="card h-100 ticket-card">
             <img src="./img/tickets/ticket-double.jpg" class="card-img-top" alt="Double ticket">
             <div class="card-body">
@@ -64,7 +65,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col" id="familyTicket">
           <div class="card h-100 ticket-card">
             <img src="./img/tickets/ticket-family.jpg" class="card-img-top" alt="Family ticket">
             <div class="card-body">
@@ -78,6 +79,8 @@
         </div>
       </div>
     </div>
+
+    <?php require 'shoppingCartSidebar.php'; ?>
   </main>
 
   <?php require './footer.html'; ?>

@@ -11,7 +11,7 @@ if(isset($_POST['removeScientificName'])){
   $sql = "DELETE FROM scientificnames WHERE CommonName = '$nameOption'";
   mysqli_query($conn, $sql) or die($sql);
 
-  header("Location:../mainPage.php?scientificnamesuccessfullydeleted");
+  header("Location:../mainPage.php?scientificnamesuccessfullydeleted&backoffice");
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }

@@ -19,5 +19,5 @@ if(isset($_POST['addInstitution'])){
     mysqli_query($conn, $sql) or die($sql);
   }
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }

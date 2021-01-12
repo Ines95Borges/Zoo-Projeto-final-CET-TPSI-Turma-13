@@ -60,6 +60,8 @@ if(isset($_POST['addAnimal'])){
   $sql = "INSERT INTO animals (Animal_ID, Enclosure_ID, ScientificName_ID, Foto_ID, DetailAnimal_ID, Name, Birthdate, Arrivaldate, Deathdate, Gender, CageNumber) VALUES (null, $enclosureID, $scientificNameID, $fotoID, $animalDetailID, '$nameAnimal', '$dateBirthAnimal', '$dateArrivalAnimal', '$dateDeathAnimal', '$gender', $cageNumber);";
   mysqli_query($conn, $sql) or die($sql);
 
+  header("Location:../mainPage.php?successfullyadded&backoffice")
+
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }

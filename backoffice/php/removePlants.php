@@ -11,9 +11,9 @@ if(isset($_POST['submitPlants'])){
   $sql = "DELETE FROM plants WHERE Name = '$nameOption'";
   mysqli_query($conn, $sql);
 
-  header("Location:../mainPage.php?successfullydeleted");
+  header("Location:../mainPage.php?successfullydeleted&backoffice");
 }else{
-  header("Location:../mainPage.php?unsuccessfulevent");
+  header("Location:../mainPage.php?unsuccessfulevent&backoffice");
 }
 
 

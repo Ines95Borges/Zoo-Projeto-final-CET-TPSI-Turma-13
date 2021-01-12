@@ -3,15 +3,20 @@
   box-sizing: border-box;
 }
 
+// Google fonts font Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;800;900&display=swap');
+
 // Variables
-$green: #1C4A21;
-$claret: #750D37;
-$yellow: #FCE709;
-$pink: #FFCAD4;
+$green: #00203F;
+$aquamarine: #ADEFD1;
+$pink: #dda15e;
+$claret: #101820;
+$yellow: #FEE715;
 
 // Gives an image as a background -image that stays on an inferior layer
 body{
   background-image: url(../img/backoffice/backoffice-background.jpg);
+  font-family: "Poppins", sans-serif;
 }
 
 // Styling the header

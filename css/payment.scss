@@ -1,0 +1,101 @@
+// Variables
+$green: #00203F;
+$aquamarine: #ADEFD1;
+$pink: #dda15e;
+$claret: #101820;
+$yellow: #FEE715;
+
+#payment {
+  h1, h2{
+    color: $aquamarine;
+}}
+
+table{
+  th{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bolder;
+    color: $yellow;
+  }
+  td{
+    text-align: center;
+    padding: 1%;
+    font-size: 1.2rem;
+  }
+  td:first-child{
+    width: 20%;
+    min-width: 150px;
+  }
+  td:nth-child(2){
+    width: 50%;
+    min-width: 70px;
+    color: $pink;
+  }
+  td:nth-child(3){
+    width: 20%;
+    min-width: 50px;
+    color: $aquamarine;
+  }
+  td:last-child{
+    width: 10%;
+    min-width: 30px;
+    color: $aquamarine;
+  }
+  img{
+    border-radius: 50%;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+  }
+}
+
+#payment-form label{
+  color: $yellow;
+}
+
+table input[type="number"]{
+  width: 60px;
+  background-color: $green;
+  border: none;
+  color: $aquamarine;
+}
+
+#payment-form input[type="text"]{
+  background-color: $green;
+  color: #fff;
+  border-radius: 30px;
+  border: 1px solid $yellow;
+}
+
+.payment-button{
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  background-color: $aquamarine;
+  color: $green;
+  font-weight: bolder;
+  font-size: 24px;
+  border-radius: 50px;
+}
+
+#paymentSuccess{
+  padding: 10%;
+  h1{
+    color: $aquamarine;
+  }
+  h3{
+    color: $yellow;
+    a{
+      color: $pink;
+      text-decoration: none;
+    }
+  }
+  div{
+    a{
+      color: $pink;
+      text-decoration: none;
+      transition: all 0.5s linear;
+    }
+    a:hover{
+      font-size: 1.7rem;
+    }
+  }
+}

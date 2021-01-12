@@ -1,11 +1,14 @@
+// Google fonts font Poppins
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;700;800;900&display=swap');
+
 // Variables
 $mainTransition: all 3s;
 $mainSpacing: 0.1rem;
-$green: #1C4A21;
-$aquamarine: #75FFCD;
-$pink: #FFCAD4;
-$claret: #750D37;
-$yellow: #FCE709;
+$green: #00203F;
+$aquamarine: #ADEFD1;
+$pink: #dda15e;
+$claret: #101820;
+$yellow: #FEE715;
 $fontSize: 14px;
 $fontSizeNavbar: 20px;
 
@@ -316,6 +319,7 @@ $fontSizeNavbar: 20px;
 body{ // Styles the body of the page
   background-color:$green; // Sets the background color
   font-size: $fontSize; // Sets the font size
+  font-family: "Poppins", sans-serif; // Sets the font-family
   main{
     position: relative; // Sets the position
     top: 100px; //Sets the distance from the top
@@ -374,7 +378,8 @@ body{ // Styles the body of the page
   }
   .indexHeading{
     color: $yellow; // Sets the color of the text
-    font-size: 30px; // Sets the size of the font
+    font-size: 1.5rem; // Sets the size of the font
+    font-weight: 900; // Sets the boldness of the font
   }
   .sidebar{ // Styling the sidebar
     border-right: 3px solid $pink; // Styles the right border
